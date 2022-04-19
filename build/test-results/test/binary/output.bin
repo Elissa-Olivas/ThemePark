@@ -1,3 +1,0 @@
-ê07:05:58.802 [Test worker] DEBUG org.springframework.web.client.RestTemplate - HTTP GET https://queue-times.com/en-US/parks/16/queue_times.json
-}07:05:58.860 [Test worker] DEBUG org.springframework.web.client.RestTemplate - Accept=[application/json, application/*+json]
-f07:05:59.210 [Test worker] DEBUG org.springframework.web.client.RestTemplate - Response 403 FORBIDDEN

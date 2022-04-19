@@ -2,20 +2,19 @@ package com.detroitlabs.ThemePark.data;
 
 import com.detroitlabs.ThemePark.model.Lands;
 import com.detroitlabs.ThemePark.model.Rides;
-import com.detroitlabs.ThemePark.service.ParkService;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Component;
-import org.w3c.dom.Attr;
 
-import java.lang.reflect.Array;
+
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import org.springframework.stereotype.Component;
+
 import java.util.ArrayList;
-import java.util.Arrays;
+
 import java.util.List;
 
 @Component
+@JsonIgnoreProperties(ignoreUnknown = true)
 public class AttractionRepository {
 
-    @Autowired
     private List<Lands> lands;
 
     public List<Lands> getLands() {
@@ -43,41 +42,26 @@ public class AttractionRepository {
         return listOfRides;
     }
 
-    //    private List<Rides> allRides;
 
-//    public static final List<Lands> ALL_LANDS = Arrays.asList(
-//            new Lands(lands.getId(), lands.getName(), lands.getRides()));
-//
-//    public static Lands getLands() {
-//        return lands;
-//    }
-//
-//    public static void setLands(Lands lands) {
-//        AttractionRepository.lands = lands;
-//    }
+    public Object findById(int id) {
+        for(Lands landByID: lands) {
+            if (landByID.getId() == id) {
+                return id;
+            }
+        }
+        return null;
+    }
 
-//    public Object findById(int id) {
-//        for(Lands lands: ALL_LANDS) {
-//            if (lands.getId() == id) {
-//                return id;
-//            }
-//        }
-//        return null;
-//    }
-//
-//    public String findByName(String name) {
-//        for(Lands lands: ALL_LANDS) {
-//            if (lands.getName().equals(name)) {
-//                return name;
-//            }
-//        }
-//        return null;
-//    }
-//
-//    public List<Lands> getAllLands() {
-//        return ALL_LANDS;
-//    }
-//
+    public String findByName(String name) {
+        for(Lands landByName: lands) {
+            if (landByName.getName().equals(name)) {
+                return name;
+            }
+        }
+        return null;
+    }
+
+
 //    public void generateRides() {
 //        allRides = new ArrayList<>();
 //        Lands lands = ParkService.fetchAttractionData();
@@ -93,15 +77,6 @@ public class AttractionRepository {
 //            }
 //        }
 //    }
-//
-//
-//
-//    public List<Rides> getAllRides() {
-//        return allRides;
-//    }
-//
-//    public void setAllRides(List<Rides> allRides) {
-//        this.allRides = allRides;
-//    }
+
 }
 

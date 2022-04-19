@@ -19,6 +19,9 @@ public class Rides {
         this.last_updated = last_updated;
     }
 
+    public Rides() {
+
+    }
     //getters and setters
     public int getId() {
         return id;
