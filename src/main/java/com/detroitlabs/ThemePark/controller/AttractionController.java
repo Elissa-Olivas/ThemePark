@@ -19,10 +19,6 @@ public class AttractionController {
     @Autowired
     private AttractionRepository attractionRepository;
 
-    @RequestMapping("/")
-    public String displayHome() {
-        return "home";
-    }
 
 
     @RequestMapping("/attractions")
