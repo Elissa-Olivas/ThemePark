@@ -9,6 +9,7 @@ import org.springframework.stereotype.Component;
 
 import java.util.ArrayList;
 
+import java.util.Arrays;
 import java.util.List;
 
 @Component
@@ -25,13 +26,35 @@ public class AttractionRepository {
         this.lands = lands;
     }
 
+//    public List<Lands> allLands() {
+//        List<Lands> allLands = new ArrayList<>();
+//        for (int i = 0; i < lands.size(); i++) {
+//            allLands.add(new Lands(lands.get(i).getId(), lands.get(i).getName(), lands.get(i).getRides()));
+//        }
+//        return allLands;
+//    }
+
     public List<Lands> allLands() {
-        for (int i = 0; i < lands.size(); i++) {
-            lands.add(new Lands(lands.get(i).getId(), lands.get(i).getName(), lands.get(i).getRides()));
+        List<Lands> allLands = new ArrayList<>();
+        for (int i = 0; i < 8; i++) {
+            allLands.add(new Lands(lands.get(i).getId(), lands.get(i).getName(), lands.get(i).getRides()));
         }
-        return lands;
+        return allLands;
     }
 
+//    public static final List<Lands> AllLands = Arrays.asList(
+//            new Lands(lands.get(0).getId(), lands.get(0).getName(), lands.get(0).getRides()),
+//            new Lands(lands.get(1).getId(), lands.get(1).getName(), lands.get(1).getRides()),
+//            new Lands(lands.get(2).getId(), lands.get(2).getName(), lands.get(2).getRides()),
+//            new Lands(lands.get(3).getId(), lands.get(3).getName(), lands.get(3).getRides()),
+//            new Lands(lands.get(4).getId(), lands.get(4).getName(), lands.get(4).getRides()),
+//            new Lands(lands.get(5).getId(), lands.get(5).getName(), lands.get(5).getRides()),
+//            new Lands(lands.get(6).getId(), lands.get(6).getName(), lands.get(6).getRides()),
+//            new Lands(lands.get(7).getId(), lands.get(7).getName(), lands.get(7).getRides()));
+//
+//    public List<Lands> getAllLands() {
+//        return AllLands;
+//    }
     public List<Rides> allRides() {
         List<Rides> listOfRides = new ArrayList<>();
         for (int i= 0; i < lands.size(); i ++) {

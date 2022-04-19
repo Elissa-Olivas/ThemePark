@@ -8,13 +8,15 @@
 <div class="Lands container">
     <div class="chip"> Lands </div>
     <div class="row">
-        <div  th:each="LandsFound: ${landInfo}" class="col s12 l4">
-            <a th:href="'/lands/' + ${LandsFound.id}" th:text="'$' + ${LandsFound.name}"></a>
+        <div th:each="LandsFound: ${landInfo}" class="col s12 l4">
+            <a th:href="'/lands/' + ${LandsFound.name}" th:text="'$' + ${LandsFound.name}"></a>
             </a>
         </div>
     </div>
 </div>
-
+<!--<div class="landInfo">-->
+<!--                <a th:href="'/lands/' + ${landName}" th:text="'$' + ${landName}"></a>-->
+<!--</div>-->
 
 </body>
 </html>

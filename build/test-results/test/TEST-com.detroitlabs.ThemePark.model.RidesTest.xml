@@ -1,7 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="com.detroitlabs.ThemePark.model.RidesTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2022-04-19T19:36:05" hostname="Elissas-MacBook-Pro.local" time="0.016">
-  <properties/>
-  <testcase name="setLast_updated()" classname="com.detroitlabs.ThemePark.model.RidesTest" time="0.016"/>
-  <system-out><![CDATA[]]></system-out>
-  <system-err><![CDATA[]]></system-err>
-</testsuite>

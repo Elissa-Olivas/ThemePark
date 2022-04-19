@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div class="Lands container">
+    <div class="chip"> Restaurants </div>
+    <div class="row">
+        <div th:each="RestaurantsFound: ${restaurant}" class="col s12 l4">
+            <a th:href="'/Restaurants/' + ${RestaurantsFound.restaurantName}" th:text="${RestaurantsFound.restaurantName}"></a>
+            <p th:href="'/Restaurants/' + ${RestaurantsFound.hours}" th:text="${RestaurantsFound.hours}"> </p>
+            </a>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>
