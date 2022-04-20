@@ -1,10 +1,1 @@
-ê09:54:06.024 [Test worker] DEBUG org.springframework.web.client.RestTemplate - HTTP GET https://queue-times.com/en-US/parks/16/queue_times.json
-é09:54:06.029 [Test worker] DEBUG org.springframework.web.client.RestTemplate - Accept=[text/plain, application/json, application/*+json, */*]
-ß09:54:06.031 [Test worker] DEBUG org.springframework.web.client.RestTemplate - Writing [parameters] with org.springframework.http.converter.StringHttpMessageConverter
-_09:54:06.668 [Test worker] DEBUG org.springframework.web.client.RestTemplate - Response 200 OK
-ë09:54:06.669 [Test worker] DEBUG org.springframework.web.client.RestTemplate - Reading to [java.lang.String] as "application/json;charset=utf-8"
-ê09:54:06.730 [Test worker] DEBUG org.springframework.web.client.RestTemplate - HTTP GET https://queue-times.com/en-US/parks/16/queue_times.json
-é09:54:06.730 [Test worker] DEBUG org.springframework.web.client.RestTemplate - Accept=[text/plain, application/json, application/*+json, */*]
-ß09:54:06.731 [Test worker] DEBUG org.springframework.web.client.RestTemplate - Writing [parameters] with org.springframework.http.converter.StringHttpMessageConverter
-_09:54:06.907 [Test worker] DEBUG org.springframework.web.client.RestTemplate - Response 200 OK
-ë09:54:06.907 [Test worker] DEBUG org.springframework.web.client.RestTemplate - Reading to [java.lang.String] as "application/json;charset=utf-8"
+Tacos

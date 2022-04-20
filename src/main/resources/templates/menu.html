@@ -42,8 +42,18 @@
         </nav>
     </div>
 </section>
-<a th:text="${restaurant.restaurantName}"></a>
-<p th:text="${restaurant.hours}"> </p>
-<p th:text="${restaurant.listOfFood}"> </p>
+<div class="Lands container">
+    <div class="chip"> Restaurants </div>
+    <div class="row">
+        <div th:each="FoodFound: ${restaurantFood}" class="col s12 l4">
+            <a th:href="'/Food/' + ${FoodFound.name}" th:text="${FoodFound.name}"></a>
+            <p th:href="'/Food/' + ${FoodFound.description}" th:text="${FoodFound.description}"> </p>
+            <p th:href="'/Food/' + ${FoodFound.price}" th:text="${FoodFound.price}"> </p>
+            <!--            <p th:href="'/Restaurants/' + ${RestaurantsFound.listOfFood}" th:text="${RestaurantsFound.listOfFood}"> </p>-->
+            <!--            button to redirect to a menu- list of food for that restaurant....NEED TO ADD LINK TO NEW PAGE-->
+            </a>
+        </div>
+    </div>
+</div>
 </body>
 </html>

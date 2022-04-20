@@ -44,7 +44,8 @@
 <h2>Contact Us</h2>
 <h3 th:text="${companyInfo.name}"></h3>
 <p th:text="${companyInfo.phn}"></p>
-<p th:text="${companyInfo.email}"></p>
-<p><a th:href="'mailto:' + ${companyInfo.address}" th:text="${companyInfo.address}"></a></p>
+<p><a th:href="'mailto:' + ${companyInfo.address}" th:text="${companyInfo.email}"></a></p>
+<p th:text="${companyInfo.address}"></p>
+<!--create link when clicked on address it takes yoou to google directions-->
 </body>
 </html>

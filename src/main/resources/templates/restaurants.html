@@ -42,6 +42,10 @@
         <div th:each="RestaurantsFound: ${restaurant}" class="col s12 l4">
             <a th:href="'/Restaurants/' + ${RestaurantsFound.restaurantName}" th:text="${RestaurantsFound.restaurantName}"></a>
             <p th:href="'/Restaurants/' + ${RestaurantsFound.hours}" th:text="${RestaurantsFound.hours}"> </p>
+            <p th:href="'/Restaurants/' + ${RestaurantsFound.location}" th:text="${RestaurantsFound.location}"> </p>
+<!--            <p th:href="'/Restaurants/' + ${RestaurantsFound.listOfFood}" th:text="${RestaurantsFound.listOfFood}"> </p>-->
+<!--            button to redirect to a menu- list of food for that restaurant....NEED TO ADD LINK TO NEW PAGE-->
+            <button><a th:href="'/menu/' + ${RestaurantsFound.restaurantName}">View Menu</a></button>
             </a>
         </div>
     </div>

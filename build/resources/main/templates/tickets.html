@@ -37,5 +37,17 @@
         </nav>
     </div>
 </section>
+<div class="row">
+    <div th:each="TicketsFound: ${tickets}" class="col s12 l4">
+<!--        private String ticketType;      //infant, child, adult, senior-->
+<!--        private int numOfDays;-->
+<!--        private double price;-->
+        <p th:href="'/tickets/' + ${TicketsFound.ticketType}" th:text="${TicketsFound.ticketType}"></p>
+        <p th:href="'/tickets/' + ${TicketsFound.numOfDays}"
+           th:text="${TicketsFound.numOfDays} + ' days'"></p>
+        <p th:href="'/tickets/' + ${TicketsFound.price}"
+           th:text="'$' + ${TicketsFound.price} + ' /day'"></p>
+    </div>
+</div>
 </body>
 </html>
