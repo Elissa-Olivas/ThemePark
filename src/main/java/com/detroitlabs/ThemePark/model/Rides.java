@@ -10,13 +10,24 @@ public class Rides {
     private boolean is_open;
     private double wait_time;
     private String last_updated;
+    private int minHeight;
 
-    public Rides(int id, String name, boolean is_open, double wait_time, String last_updated) {
+    public Rides(int id, String name, boolean is_open, double wait_time, String last_updated, int minHeight) {
         this.id = id;
         this.name = name;
         this.is_open = is_open;
         this.wait_time = wait_time;
         this.last_updated = last_updated;
+        this.minHeight = minHeight;
+    }
+
+
+    public int getMinHeight() {
+        return minHeight;
+    }
+
+    public void setMinHeight(int minHeight) {
+        this.minHeight = minHeight;
     }
 
     public Rides() {

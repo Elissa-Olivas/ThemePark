@@ -11,6 +11,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import java.io.IOException;
 import java.util.List;
 
 @Controller
@@ -23,15 +24,8 @@ public class AttractionController {
 
 
     @RequestMapping("/attractions")
-    public String displayAttractions(ModelMap modelMap) {
-        List<Lands> allLands = attractionRepository.allLands();
-        String landName = attractionRepository.allLands().get(0).getName();
-        List<Rides> allRides = attractionRepository.allRides();
-        modelMap.put("landName", landName);
-        modelMap.put("rideInfo", allRides);
-        modelMap.put("landInfo", allLands);
+    public String displayAttractions(ModelMap modelMap) throws IOException {
+        modelMap.put("allLands", attractionRepository.landsList());
         return "attractions";
     }
-
-
 }

@@ -13,7 +13,7 @@ class RidesTest {
 
     @BeforeEach
     void newRide() {
-        testRide = new Rides(404, "AdventureLand", true, 4, "2022-04-19T13:01:18.000Z");
+        testRide = new Rides(404, "AdventureLand", true, 4, "2022-04-19T13:01:18.000Z", 65);
     }
 
     @Test

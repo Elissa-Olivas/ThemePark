@@ -1,8 +1,10 @@
 package com.detroitlabs.ThemePark.data;
 
 import com.detroitlabs.ThemePark.model.Lands;
+import com.detroitlabs.ThemePark.service.ParkService;
 import org.junit.jupiter.api.Test;
 
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -26,10 +28,10 @@ class AttractionRepositoryTest {
 //        return allLands;
 //    }
     @Test
-    void allLands() {
-        AttractionRepository attractionRepository = new AttractionRepository();
-        String results = attractionRepository.getLands().get(0).getName();
-        assertEquals(results, "AdventureLand");
+    void return_Land_ID() throws IOException {
+        AttractionRepository attractionRepository = ParkService.fetchAttractionData();
+        int results = attractionRepository.landsList().get(0).getId();
+        assertEquals(results, 109);
     }
 
     @Test
