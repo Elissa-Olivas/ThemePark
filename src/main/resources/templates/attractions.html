@@ -12,10 +12,11 @@
             <a th:href="'/lands/' + ${LandsFound.name}" th:text="${LandsFound.name}"></a>
             <a th:href="'/lands/' + ${LandsFound.id}" th:text="${LandsFound.id}"></a>
         </div>
-<!--        <div th:each="LandsFound: ${allLands}" class="col s12 l4">-->
-<!--            <a th:href="'/lands/' + ${LandsFound.name}" th:text="'$' + ${LandsFound.name}"></a>-->
-<!--            <a th:href="'/lands/' + ${LandsFound.id}" th:text="'$' + ${LandsFound.id}"></a>-->
-<!--        </div>-->
+        <div th:each="RidesFound: ${allRides}" class="col s12 l4">
+            <a th:href="'/rides/' + ${RidesFound.name}" th:text="${RidesFound.name}"></a>
+            <a th:href="'/rides/' + ${RidesFound.id}" th:text="${RidesFound.id}"></a>
+        </div>
+
     </div>
 
         </div>

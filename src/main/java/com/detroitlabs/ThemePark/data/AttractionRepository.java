@@ -21,6 +21,9 @@ public class AttractionRepository {
     private List<Lands> lands;
     private List<Rides> rides;
     private AttractionRepository parkData;
+    public List<Rides> listOfRides;
+    private List<Lands> allLands;
+    private List<Lands> ridesPerLand;
 
 
     public List<Lands> getLands() {
@@ -32,7 +35,7 @@ public class AttractionRepository {
     }
 
 
-    private List<Lands> allLands;
+
     public List<Lands> landsList () throws IOException {
         parkData = ParkService.fetchAttractionData();
         allLands = new ArrayList<>();
@@ -42,47 +45,19 @@ public class AttractionRepository {
         return allLands;
     }
 
-    //Lands attempt 1 - no error, but dosent list any information on html page
-//    private List<Lands> allLands;
-//
-//        public List<Lands> allLands() {
-//        allLands = new ArrayList<>();
-//        for (int i = 0; i < lands.size(); i++) {
-//            allLands.add(new Lands(lands.get(i).getId(), lands.get(i).getName(), lands.get(i).getRides()));
-//        }
-//        return allLands;
-//    }
-//
-//    public List<Lands> getAllLands() {
-//        return allLands;
-//    }
+    public List<Lands> getAllLands() {
+        return allLands;
+    }
 
 
-    //Lands attempt 2 - Get Error creating bean with name
-//    public List<Lands> AllLands = Arrays.asList(
-//            new Lands(lands.get(0).getId(), lands.get(0).getName(), lands.get(0).getRides()),
-//            new Lands(lands.get(1).getId(), lands.get(1).getName(), lands.get(1).getRides()),
-//            new Lands(lands.get(2).getId(), lands.get(2).getName(), lands.get(2).getRides()),
-//            new Lands(lands.get(3).getId(), lands.get(3).getName(), lands.get(3).getRides()),
-//            new Lands(lands.get(4).getId(), lands.get(4).getName(), lands.get(4).getRides()),
-//            new Lands(lands.get(5).getId(), lands.get(5).getName(), lands.get(5).getRides()),
-//            new Lands(lands.get(6).getId(), lands.get(6).getName(), lands.get(6).getRides()),
-//            new Lands(lands.get(7).getId(), lands.get(7).getName(), lands.get(7).getRides()));
-
-//    public List<Lands> getAllLands() {
-//        return AllLands;
-//    }
-
-
-    //Attempt 1
-    public List<Rides> listOfRides;
-
-    public List<Rides> allRides() {
+    //attempt 1 - only rides, no lands attached?
+    public List<Rides> ridesList () throws IOException {
+        parkData = ParkService.fetchAttractionData();
         listOfRides = new ArrayList<>();
-        for (int i = 0; i < allLands.size(); i++) {
-            listOfRides.add(new Rides(lands.get(i).getRides().get(i).getId(), lands.get(i).getRides().get(i).getName(),
-                    lands.get(i).getRides().get(i).isIs_open(), lands.get(i).getRides().get(i).getWait_time(),
-                    lands.get(i).getRides().get(i).getLast_updated(), lands.get(i).getRides().get(i).getMinHeight()));
+        for (int i = 0; i < 5; i++) {
+            listOfRides.add(new Rides(parkData.getLands().get(i).getRides().get(i).getId(), parkData.getLands().get(i).getRides().get(i).getName(),
+                    parkData.getLands().get(i).getRides().get(i).isIs_open(), parkData.getLands().get(i).getRides().get(i).getWait_time(),
+                    parkData.getLands().get(i).getRides().get(i).getLast_updated(), parkData.getLands().get(i).getRides().get(i).getMinHeight()));
         }
         return listOfRides;
     }
@@ -91,16 +66,21 @@ public class AttractionRepository {
         return listOfRides;
     }
 
+    //attempt 2 - rides with lands attached?
+//    public List<Rides> ridesList() throws IOException {
+//        parkData = ParkService.fetchAttractionData();
+//        ridesPerLand = new ArrayList<>();
+//        listOfRides = new ArrayList<>();
+//        for (int i = 0; i < 5; i++) {
+//            listOfRides.add(new Rides(lands.get(i).getRides().get(i).getId(), lands.get(i).getRides().get(i).getName(),
+//                    lands.get(i).getRides().get(i).isIs_open(), lands.get(i).getRides().get(i).getWait_time(),
+//                    lands.get(i).getRides().get(i).getLast_updated(), lands.get(i).getRides().get(i).getMinHeight()));
+//        }
+//        return listOfRides;
+//    }
+
+
     //Attempt 2
-//    private List<Rides> listOfAllRides;
-//
-//    public List<Rides> getListOfAllRides() {
-//        return listOfAllRides;
-//    }
-//
-//    public void setListOfAllRides(List<Rides> listOfAllRides) {
-//        this.listOfAllRides = listOfAllRides;
-//    }
 //
 //    public void generateRides() throws IOException {
 //        listOfAllRides = new ArrayList<>();

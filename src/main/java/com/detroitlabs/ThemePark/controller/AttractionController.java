@@ -26,6 +26,7 @@ public class AttractionController {
     @RequestMapping("/attractions")
     public String displayAttractions(ModelMap modelMap) throws IOException {
         modelMap.put("allLands", attractionRepository.landsList());
+        modelMap.put("allRides", attractionRepository.ridesList());
         return "attractions";
     }
 }
