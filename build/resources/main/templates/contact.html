@@ -37,37 +37,14 @@
         </nav>
     </div>
 </section>
-<div class="Lands container">
-    <div class="chip">
-        <h3>Lands of Gisney</h3>
-    </div>
-    <div class="row">
-        <div th:each="LandsFound: ${allLands}" class="col s12 l4">
-<!--            Add a photo of the general LAND-->
-            <a th:href="'/lands/' + ${LandsFound.name}" th:text="${LandsFound.name}"></a>
-        </div>
-    </div>
-    <div class="chip">
-        <h3>ALL RIDES</h3>
-    </div>
-    <div class="row">
-        <div th:each="RidesFound: ${allRides}" class="col s12 l4">
-<!--            Add in a photo of the Ride-->
-            <h3 th:href="'/rides/' + ${RidesFound.name}" th:text="${RidesFound.name}"></h3>
-            <p th:href="'/rides/' + ${RidesFound.wait_time}"
-               th:text="'Wait time: ' + ${RidesFound.wait_time} + ' minutes'"></p>
-            <p th:href="'/rides/' + ${RidesFound.minHeight}"
-               th:text="'Minimum height: ' + ${RidesFound.minHeight} + ' inches'"></p>
-        </div>
-    </div>
-
-</div>
-</div>
-<!--            <div th:each="ridesFound: ${rideInfo}" class="col s12 l4">-->
-<!--                <p th:href="'/Food/' + ${ridesFound.name}" th:text="'$' + ${ridesFound.name}"></p>-->
-<!--                <p th:href="'/Food/' + ${ridesFound.minHeight}" th:text="'$' + ${ridesFound.minHeight}"></p>-->
-<!--            </div>-->
-
-
+<!--private String name;-->
+<!--private String email;-->
+<!--private String phn;-->
+<!--private String address;-->
+<h2>Contact Us</h2>
+<h3 th:text="${companyInfo.name}"></h3>
+<p th:text="${companyInfo.phn}"></p>
+<p th:text="${companyInfo.email}"></p>
+<p><a th:href="'mailto:' + ${companyInfo.address}" th:text="${companyInfo.address}"></a></p>
 </body>
 </html>
