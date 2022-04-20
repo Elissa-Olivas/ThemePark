@@ -23,7 +23,7 @@ public class AttractionRepository {
     private AttractionRepository parkData;
     public List<Rides> listOfRides;
     private List<Lands> allLands;
-    private List<Lands> ridesPerLand;
+    private List<Lands> ridesPerLand = new ArrayList<>();
 
 
     public List<Lands> getLands() {
@@ -35,11 +35,10 @@ public class AttractionRepository {
     }
 
 
-
-    public List<Lands> landsList () throws IOException {
+    public List<Lands> landsList() throws IOException {
         parkData = ParkService.fetchAttractionData();
         allLands = new ArrayList<>();
-        for(int i = 0; i < 9; i++) {
+        for (int i = 0; i < 9; i++) {
             allLands.add(new Lands(parkData.getLands().get(i).getId(), parkData.getLands().get(i).getName(), parkData.getLands().get(i).getRides()));
         }
         return allLands;
@@ -49,73 +48,53 @@ public class AttractionRepository {
         return allLands;
     }
 
-
-    //attempt 1 - only rides, no lands attached?
-    public List<Rides> ridesList () throws IOException {
+    //works but need to figure out how to add more rides per land
+    public List<Rides> ridesList() throws IOException {
         parkData = ParkService.fetchAttractionData();
         listOfRides = new ArrayList<>();
-        for (int i = 0; i < 5; i++) {
-            listOfRides.add(new Rides(parkData.getLands().get(i).getRides().get(i).getId(), parkData.getLands().get(i).getRides().get(i).getName(),
-                    parkData.getLands().get(i).getRides().get(i).isIs_open(), parkData.getLands().get(i).getRides().get(i).getWait_time(),
-                    parkData.getLands().get(i).getRides().get(i).getLast_updated(), parkData.getLands().get(i).getRides().get(i).getMinHeight()));
+        for (int l = 0; l < allLands.size(); l++) {
+            for (int i = 0; i < 2; i++) {
+                listOfRides.add(new Rides(allLands.get(l).getRides().get(i).getId(), allLands.get(l).getRides().get(i).getName(),
+                        allLands.get(l).getRides().get(i).isIs_open(), allLands.get(l).getRides().get(i).getWait_time(),
+                        allLands.get(l).getRides().get(i).getLast_updated(), allLands.get(l).getRides().get(i).getMinHeight()));
+            }
         }
         return listOfRides;
     }
 
-    public List<Rides> getListOfRides() {
-        return listOfRides;
-    }
-
-    //attempt 2 - rides with lands attached?
-//    public List<Rides> ridesList() throws IOException {
+    //attempt 1 - only rides, no lands attached? - works but does Land 1 Ride 1, Land 2 ride 2. Dosent list all the rides in each land before moving on to the next
+//    public List<Rides> ridesList () throws IOException {
 //        parkData = ParkService.fetchAttractionData();
-//        ridesPerLand = new ArrayList<>();
 //        listOfRides = new ArrayList<>();
 //        for (int i = 0; i < 5; i++) {
-//            listOfRides.add(new Rides(lands.get(i).getRides().get(i).getId(), lands.get(i).getRides().get(i).getName(),
-//                    lands.get(i).getRides().get(i).isIs_open(), lands.get(i).getRides().get(i).getWait_time(),
-//                    lands.get(i).getRides().get(i).getLast_updated(), lands.get(i).getRides().get(i).getMinHeight()));
+//            listOfRides.add(new Rides(parkData.getLands().get(i).getRides().get(i).getId(), parkData.getLands().get(i).getRides().get(i).getName(),
+//                    parkData.getLands().get(i).getRides().get(i).isIs_open(), parkData.getLands().get(i).getRides().get(i).getWait_time(),
+//                    parkData.getLands().get(i).getRides().get(i).getLast_updated(), parkData.getLands().get(i).getRides().get(i).getMinHeight()));
 //        }
 //        return listOfRides;
 //    }
 
 
-    //Attempt 2
-//
-//    public void generateRides() throws IOException {
-//        listOfAllRides = new ArrayList<>();
-////        int landId = ParkService.fetchAttractionData().getLands().get(0).getId();
-//        AttractionRepository attractionRepository = ParkService.fetchAttractionData();
-//        for (int a = 0; a < 5; a++) {
-//            String landName = attractionRepository.getLands().get(a).getName();
-//                for (int r = 0; r < 5; r++) {
-//                    int rideId = attractionRepository.allRides().get(r).getId();
-//                    String rideName = attractionRepository.allRides().get(r).getName();
-//                     boolean ride_is_open = attractionRepository.allRides().get(r).isIs_open();
-//                     double ride_wait_time = attractionRepository.allRides().get(r).getWait_time();
-//                     String ride_last_updated = attractionRepository.allRides().get(r).getLast_updated();
-//                     int minHeight = attractionRepository.allRides().get(r).getMinHeight();
-//                    listOfAllRides.add(new Rides(rideId, rideName, ride_is_open, ride_wait_time, ride_last_updated, minHeight));
-//                }
-//            }
-//        }
+    public List<Rides> getListOfRides() {
+        return listOfRides;
+    }
 
-//    public void generateAllRides() throws IOException {
-//        listOfAllRides = new ArrayList<>();
-//        AttractionRepository attractionRepository = ParkService.fetchAttractionData();
-//        for (int a = 0; a < 5; a++) {
-//                int rideId = attractionRepository.allRides().get(a).getId();
-//                String rideName = attractionRepository.allRides().get(a).getName();
-//                boolean ride_is_open = attractionRepository.allRides().get(a).isIs_open();
-//                double ride_wait_time = attractionRepository.allRides().get(a).getWait_time();
-//                String ride_last_updated = attractionRepository.allRides().get(a).getLast_updated();
-//                int minHeight = attractionRepository.allRides().get(a).getMinHeight();
-//                listOfAllRides.add(new Rides(rideId, rideName, ride_is_open, ride_wait_time, ride_last_updated, minHeight));
-//            }
+
+    //attempt 3 - out of bounds error - Index: 6, Size: 2
+//    public List<Rides> ridesList() throws IOException {
+//        parkData = ParkService.fetchAttractionData();
+//        listOfRides = new ArrayList<>();
+//        for (int i = 0; i < allLands.size(); i++) {
+//                listOfRides.add(new Rides(parkData.getLands().get(i).getRides().get(i).getId(), parkData.getLands().get(i).getRides().get(i).getName(),
+//                        parkData.getLands().get(i).getRides().get(i).isIs_open(), parkData.getLands().get(i).getRides().get(i).getWait_time(),
+//                        parkData.getLands().get(i).getRides().get(i).getLast_updated(), parkData.getLands().get(i).getRides().get(i).getMinHeight()));
 //        }
+//        return listOfRides;
+//    }
+
 
     public Object findById(int id) {
-        for (Lands landByID : lands) {
+        for (Lands landByID : allLands) {
             if (landByID.getId() == id) {
                 return id;
             }
@@ -124,7 +103,7 @@ public class AttractionRepository {
     }
 
     public String findByName(String name) {
-        for (Lands landByName : lands) {
+        for (Lands landByName : allLands) {
             if (landByName.getName().equals(name)) {
                 return name;
             }
@@ -140,6 +119,5 @@ public class AttractionRepository {
         }
         return null;
     }
-
-    }
+}
 

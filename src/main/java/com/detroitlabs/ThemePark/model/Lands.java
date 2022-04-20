@@ -22,6 +22,10 @@ public class Lands {
     public Lands() {
 
     }
+    public Lands(int id, String name) {
+        this.id = id;
+        this.name = name;
+    }
 
     //getters and setters
     public int getId() {
