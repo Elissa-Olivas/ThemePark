@@ -28,6 +28,50 @@
             margin: auto;
             padding: 10px;
         }
+
+
+        .container {
+            position: relative;
+            width: 40%;
+            /*display: inline-block;*/
+            /*float: left;*/
+
+        }
+
+        .card-img {
+            display: block;
+            width: 100%;
+            height: auto;
+        }
+
+        .overlay {
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 100%;
+            width: 100%;
+            opacity: 0;
+            transition: .5s ease;
+            background-color: #008CBA;
+        }
+
+        .container:hover .overlay {
+            opacity: 1;
+        }
+
+        .text {
+            color: white;
+            font-size: 20px;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            -webkit-transform: translate(-50%, -50%);
+            -ms-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%);
+            text-align: center;
+        }
     </style>
 </head>
 <body>
@@ -76,41 +120,73 @@
     <br>
     <h2>Watch Dreams Come True at the 2nd Happiest Place on Earth.....</h2>
 </div>
+<br>
 <div class="container-fluid">
-    <div class="row">
-        <div class="col">
-            <div class="card">
-                <img th:src="'/images/' + 'parade.webp'" class="card-img" >
-                <div class="card-img-overlay card-header text-white">
-                    <h3>Can't Miss Experiences</h3>
-                </div>
-                <div class="card-img-overlay text-white">
-                    <br>
-                    <br>
-                    <h5 class="card-title">Main Street Electrical Parade</h5>
-                    <p class="card-text">Watch over a half million lights sparkle as this spectacular pageant comes home for its 50th anniversary of nighttime magic and imagination!</p>
-                    <p class="card-text">Returning April 22, 2022</p>
-                </div>
-            </div>
-        </div>
-        <div class="col">
-            <div class="card">
-                <img th:src="'/images/' + 'color.jpeg'" class="card-img">
-                <div class="card-img-overlay card-header text-white">
-                    <h3>Can't Miss Experiences</h3>
-                </div>
-                <div class="card-img-overlay text-white">
-                    <br>
-                    <br>
-                    <h5 class="card-title">World of Color</h5>
-                    <p class="card-text">Disney and Pixar stories soar to life on a vivid veil of mist during this outdoor nighttime spectacular.</p>
-                    <p class="card-text">Returning April 22, 2022</p>
-                </div>
+    <h3>Can't Miss Experiences</h3>
+    <br>
+
+    <div class="container">
+        <img th:src="'/images/' + 'parade.webp'" class="card-img">
+        <div class="overlay">
+            <div class="text">
+                <h4 class="card-title">Main Street Electrical Parade</h4>
+                <br>
+                <p class="card-text">Watch over a half million lights sparkle as this spectacular pageant comes home for
+                    its 50th anniversary of nighttime magic and imagination!</p>
+                <p class="card-text">Returning April 22, 2022</p>
             </div>
         </div>
     </div>
+
+    <div class="container">
+        <img th:src="'/images/' + 'color.jpeg'" class="card-img">
+        <div class="overlay">
+            <div class="text">
+                <h4 class="card-title">World of Color</h4>
+                <br>
+                <p class="card-text">Disney and Pixar stories soar to life on a vivid veil of mist during this outdoor
+                    nighttime spectacular.</p>
+                <p class="card-text">Returning April 22, 2022</p>
+            </div>
+        </div>
+    </div>
+
+
+    <!--    <div class="row">-->
+    <!--        <div class="col">-->
+    <!--            <div class="card">-->
+    <!--                <img th:src="'/images/' + 'parade.webp'" class="card-img" >-->
+    <!--                <div class="card-img-overlay card-header text-white">-->
+    <!--                    <h3>Can't Miss Experiences</h3>-->
+    <!--                </div>-->
+    <!--                <div class="card-img-overlay text-white">-->
+    <!--                    <br>-->
+    <!--                    <br>-->
+    <!--                    <h5 class="card-title">Main Street Electrical Parade</h5>-->
+    <!--                    <p class="card-text">Watch over a half million lights sparkle as this spectacular pageant comes home for its 50th anniversary of nighttime magic and imagination!</p>-->
+    <!--                    <p class="card-text">Returning April 22, 2022</p>-->
+    <!--                </div>-->
+    <!--            </div>-->
+    <!--        </div>-->
+    <!--        <div class="col">-->
+    <!--            <div class="card">-->
+    <!--                <img th:src="'/images/' + 'color.jpeg'" class="card-img">-->
+    <!--                <div class="card-img-overlay card-header text-white">-->
+    <!--                    <h3>Can't Miss Experiences</h3>-->
+    <!--                </div>-->
+    <!--                <div class="card-img-overlay text-white">-->
+    <!--                    <br>-->
+    <!--                    <br>-->
+    <!--                    <h5 class="card-title">World of Color</h5>-->
+    <!--                    <p class="card-text">Disney and Pixar stories soar to life on a vivid veil of mist during this outdoor nighttime spectacular.</p>-->
+    <!--                    <p class="card-text">Returning April 22, 2022</p>-->
+    <!--                </div>-->
+    <!--            </div>-->
+    <!--        </div>-->
+    <!--    </div>-->
     <br>
     <br>
+
     <div class="row" style="margin-left: 10%;">
         <div class="col">
             <div class="card border-dark text-dark bg-light mb-3" style="width: 25rem;">
@@ -148,10 +224,12 @@
         </div>
         <div class="col">
             <div class="card border-dark text-dark bg-light mb-3" style="width: 25rem;">
-                <img th:src="'/images/' + 'tickets.jpeg'" style="width: 398px; height: 223px;" class="card-img-top" alt="...">
+                <img th:src="'/images/' + 'tickets.jpeg'" style="width: 398px; height: 223px;" class="card-img-top"
+                     alt="...">
                 <div class="card-body">
                     <h5 class="card-title">Tickets or Hotels</h5>
-                    <p class="card-text">Ready to Visit and plan your trip? Check out ticket prices and Book your Stay</p>
+                    <p class="card-text">Ready to Visit and plan your trip? Check out ticket prices and Book your
+                        Stay</p>
                 </div>
                 <ul class="list-group list-group-flush">
                     <li class="list-group-item">The more you play, the greater the discount</li>
