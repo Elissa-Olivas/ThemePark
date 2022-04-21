@@ -28,7 +28,7 @@ public class RestaurantController {
     @RequestMapping("/menu/{restaurantName}")
     public String displayRestaurantMenu(@PathVariable String restaurantName, ModelMap modelMap) {
         Restaurants restaurants = restaurantRepository.searchRestaurantByName(restaurantName);
-        List<Food> restaurantFood = restaurantRepository.getAllRestaurants().get(2).getListOfFood();
+        List<Food> restaurantFood = restaurantRepository.getAllRestaurants().get(2).getListOfFood(); //only returns Olafs on all menus
         modelMap.put("restaurant", restaurants);
         modelMap.put("restaurantFood", restaurantFood);
         return "menu";
