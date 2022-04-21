@@ -6,7 +6,7 @@
 
 .brand {
     position: absolute;
-    padding-left: 20px;
+    padding-left: 5px;
     float: left;
     line-height: 70px;
     text-transform: uppercase;
@@ -62,12 +62,6 @@ nav ul li ul li a {
     line-height: 20px;
 }
 
-.nav-dropdown {
-    position: absolute;
-    display: none;
-    z-index: 1;
-    box-shadow: 0 3px 12px rgba(0, 0, 0, 0.15);
-}
 
 /* Mobile navigation */
 .nav-mobile {
@@ -156,3 +150,45 @@ article {
     margin: 0 auto;
     padding: 10px;
 }
+body {
+    background-image: linear-gradient(to left top, #03338d, #005fb4, #0089ce, #00b3de, #02dbe7);
+}
+
+/*//buttons*/
+  .button {
+      display: inline-block;
+      text-align: center;
+      vertical-align: middle;
+      padding: 14px 26px;
+      border: 3px solid #0060b4;
+      border-radius: 25px;
+      background: #0089ce;
+      background: -webkit-gradient(linear, left top, left bottom, from(#0089ce), to(#00b2de));
+      background: -moz-linear-gradient(top, #0089ce, #00b2de);
+      background: linear-gradient(to bottom, #0089ce, #00b2de);
+      -webkit-box-shadow: #0060b4 1px 0px 12px 0px;
+      -moz-box-shadow: #0060b4 1px 0px 12px 0px;
+      box-shadow: #0060b4 1px 0px 12px 0px;
+      text-shadow: #0060b4 1px -1px 1px;
+      font: normal normal bold 20px arial;
+      color: #ffffff;
+      text-decoration: none;
+  }
+.button:hover,
+.button:focus {
+    border: 3px solid #009aff;
+    background: #00a4f7;
+    background: -webkit-gradient(linear, left top, left bottom, from(#00a4f7), to(#00d6ff));
+    background: -moz-linear-gradient(top, #00a4f7, #00d6ff);
+    background: linear-gradient(to bottom, #00a4f7, #00d6ff);
+    color: #ffffff;
+    text-decoration: none;
+}
+.button:active {
+    background: #00527c;
+    background: -webkit-gradient(linear, left top, left bottom, from(#00527c), to(#00b2de));
+    background: -moz-linear-gradient(top, #00527c, #00b2de);
+    background: linear-gradient(to bottom, #00527c, #00b2de);
+}
+
+
