@@ -29,7 +29,7 @@ public class AttractionController {
     @RequestMapping("/attractions")
     public String displayAttractions(ModelMap modelMap) throws IOException {
         modelMap.put("allLands", attractionRepository.landsList());
-        modelMap.put("allRides", attractionRepository.ridesList());
+//        modelMap.put("allRides", attractionRepository.ridesList());
         return "attractions";
     }
 
@@ -37,7 +37,7 @@ public class AttractionController {
     public String displayRestaurantMenu(@PathVariable String name, ModelMap modelMap) throws IOException {
         String lands = attractionRepository.findByName(name);
         modelMap.put("lands", lands);
-        modelMap.put("allRides", attractionRepository.ridesList());
+        modelMap.put("allRides", attractionRepository.getRidesByLand(name));
         return "attraction-details";
     }
 }

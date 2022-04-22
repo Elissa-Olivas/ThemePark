@@ -14,6 +14,22 @@
         .card-text {
             text-align: center;
         }
+        /*.flexbox-container {*/
+        /*    display: flex;*/
+        /*    justify-content: space-around;*/
+        /*}*/
+        .flexbox-item {
+            display: block;
+            margin: auto;
+            width: 33%;
+            border: 1px solid #333;
+        }
+        .row {
+            display: flex;
+            margin: 0 auto;
+            width: 100vw;
+            flex-direction: row;
+        }
     </style>
 </head>
 <body>
@@ -54,10 +70,27 @@ AND Possibly a GRID CARD for each ride-->
 <br>
 <h1>Lands of Gisney</h1>
 <br>
-<div class="container-fluid">
+<!--<div class="container-fluid">-->
+<!--    <div class="row">-->
+<!--        <div class="row" style="margin-left: 10%;">-->
+<!--            <div class="col">-->
+<!--                <div th:each="LandsFound: ${allLands}" class="col s12 l4">-->
+<!--                    <div class="card border-dark text-dark bg-light mb-3" style="width: 25rem;">-->
+<!--                        <img th:src="'/images/' + 'starwars.webp'" class="card-img-top" alt="star-wars">-->
+<!--                        <div class="card-body">-->
+<!--                            <p class="card-text"><a th:href="'/attraction-details/' + ${LandsFound.name}"-->
+<!--                                                    th:text="${LandsFound.name}"></a></p>-->
+<!--                        </div>-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--            </div>-->
+<!--        </div>-->
+<!--    </div>-->
+<!--</div>-->
+<div class="flexbox-container">
     <div class="row">
-        <div class="row" style="margin-left: 10%;">
-            <div class="col">
+        <div class="row">
+            <div class="flexbox-item">
                 <div th:each="LandsFound: ${allLands}" class="col s12 l4">
                     <div class="card border-dark text-dark bg-light mb-3" style="width: 25rem;">
                         <img th:src="'/images/' + 'starwars.webp'" class="card-img-top" alt="star-wars">

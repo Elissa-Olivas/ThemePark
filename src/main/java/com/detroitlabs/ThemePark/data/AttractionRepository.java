@@ -22,7 +22,7 @@ public class AttractionRepository {
     private AttractionRepository parkData;
     public List<Rides> listOfRides;
     private List<Lands> allLands;
-    private List<String> ridesPerLand;
+    private List<Rides> ridesPerLand;
 
 
     public List<Lands> getLands() {
@@ -65,6 +65,17 @@ public class AttractionRepository {
 
     public List<Rides> getListOfRides() {
         return listOfRides;
+    }
+
+    //gets rides by land, make list with rides only within that land
+    public List<Rides> getRidesByLand(String name) {
+        ridesPerLand = new ArrayList<>();
+        for (Lands lands: allLands) {
+            if(lands.getName().equals(name)) {
+                ridesPerLand = lands.getRides();
+            }
+        }
+        return ridesPerLand;
     }
 
 
