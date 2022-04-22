@@ -7,6 +7,9 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
           integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
     <style>
+        body {
+            text-align: center;
+        }
         h1 {
             text-align: center;
             font-family: Copperplate, Papyrus, fantasy;
@@ -52,17 +55,40 @@
 <br>
 <br>
 <br>
-<div class="row">
-    <div th:each="TicketsFound: ${tickets}" class="col s12 l4">
-<!--        private String ticketType;      //infant, child, adult, senior-->
-<!--        private int numOfDays;-->
-<!--        private double price;-->
-        <p th:href="'/tickets/' + ${TicketsFound.ticketType}" th:text="${TicketsFound.ticketType}"></p>
-        <p th:href="'/tickets/' + ${TicketsFound.numOfDays}"
-           th:text="${TicketsFound.numOfDays} + ' days'"></p>
-        <p th:href="'/tickets/' + ${TicketsFound.price}"
-           th:text="'$' + ${TicketsFound.price} + ' /day'"></p>
+<div class="container-fluid">
+    <div class="row">
+        <div class="row" style="margin-left: 10%;">
+            <div class="col">
+                <div th:each="TicketsFound: ${tickets}" class="col s12 l4">
+                    <div class="card border-dark text-dark bg-light mb-3" style="width: 25rem;">
+                        <img th:src="'/images/' + 'starwars.webp'" class="card-img-top" alt="star-wars">
+                        <div class="card-body">
+                            <p th:href="'/tickets/' + ${TicketsFound.ticketType}"
+                               th:text="${TicketsFound.ticketType}"></p>
+                            <p th:href="'/tickets/' + ${TicketsFound.numOfDays}"
+                               th:text="${TicketsFound.numOfDays} + ' days'"></p>
+                            <p th:href="'/tickets/' + ${TicketsFound.price}"
+                               th:text="'$' + ${TicketsFound.price} + ' /day'"></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 </div>
+<a class="button card-link"  th:href="@{/tickets}">Purchase Your Tickets Now</a>
+
+<!--<div class="row">-->
+<!--    <div th:each="TicketsFound: ${tickets}" class="col s12 l4">-->
+<!--        &lt;!&ndash;        private String ticketType;      //infant, child, adult, senior&ndash;&gt;-->
+<!--        &lt;!&ndash;        private int numOfDays;&ndash;&gt;-->
+<!--        &lt;!&ndash;        private double price;&ndash;&gt;-->
+<!--        <p th:href="'/tickets/' + ${TicketsFound.ticketType}" th:text="${TicketsFound.ticketType}"></p>-->
+<!--        <p th:href="'/tickets/' + ${TicketsFound.numOfDays}"-->
+<!--           th:text="${TicketsFound.numOfDays} + ' days'"></p>-->
+<!--        <p th:href="'/tickets/' + ${TicketsFound.price}"-->
+<!--           th:text="'$' + ${TicketsFound.price} + ' /day'"></p>-->
+<!--    </div>-->
+<!--</div>-->
 </body>
 </html>

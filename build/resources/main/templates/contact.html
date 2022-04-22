@@ -15,6 +15,7 @@
             font-family: Copperplate, Papyrus, fantasy;
         }
     </style>
+    <script src="https://kit.fontawesome.com/ff400e2800.js" crossorigin="anonymous"></script>
 </head>
 <body>
 <section class="navigation">
@@ -49,12 +50,36 @@
         </nav>
     </div>
 </section>
-
+<!--<div class="container-fluid">-->
+<!--    <div class="row">-->
+<!--        <div class="row" style="margin-left: 10%;">-->
+<!--            <div class="col">-->
+<!--&lt;!&ndash;                <div th:each="TicketsFound: ${tickets}" class="col s12 l4">&ndash;&gt;-->
+<!--                    <div class="card border-dark text-dark bg-light mb-3" style="width: 25rem;">-->
+<!--                        <div class="card-body">-->
+<!--                            <h1>Contact Us</h1>-->
+<!--                            <h3 th:text="${companyInfo.name}"></h3>-->
+<!--                            <p th:text="${companyInfo.phn}"></p>-->
+<!--                            <p><a th:href="'mailto:' + ${companyInfo.address}" th:text="${companyInfo.email}"></a></p>-->
+<!--                            <p th:text="${companyInfo.address}"></p>-->
+<!--                            &lt;!&ndash;create link when clicked on address it takes yoou to google directions&ndash;&gt;-->
+<!--                            <img th:src="'/images/' + 'starwars.webp'" class="card-img-top" alt="MAP">-->
+<!--                        </div>-->
+<!--                    </div>-->
+<!--&lt;!&ndash;                </div>&ndash;&gt;-->
+<!--            </div>-->
+<!--        </div>-->
+<!--    </div>-->
+<!--</div>-->
+<br>
 <h1>Contact Us</h1>
 <h3 th:text="${companyInfo.name}"></h3>
-<p th:text="${companyInfo.phn}"></p>
-<p><a th:href="'mailto:' + ${companyInfo.address}" th:text="${companyInfo.email}"></a></p>
-<p th:text="${companyInfo.address}"></p>
+<br>
+<h5><i class="fa-solid fa-phone" th:text="'  ' + ${companyInfo.phn}"></i></h5>
+<h5><i class="fa-regular fa-envelope"><a style="color: #333;" th:href="'mailto:' + ${companyInfo.email}" th:text="'   ' + ${companyInfo.email}"></a></i></h5>
+<!--<p><a th:href="'mailto:' + ${companyInfo.address}" th:text="${companyInfo.email}"></a></p>-->
+<h5> <i class="fa-solid fa-location-dot" th:text="'  ' + ${companyInfo.address}"></i></h5>
 <!--create link when clicked on address it takes yoou to google directions-->
+<img th:src="'/images/' + 'starwars.webp'" class="card-img-top" alt="MAP" style="width: 1500px; height: auto;">
 </body>
 </html>
