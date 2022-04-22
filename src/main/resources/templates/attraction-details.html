@@ -14,6 +14,9 @@
             text-align: center;
             font-family: Copperplate, Papyrus, fantasy;
         }
+        .card-text {
+            text-align: center;
+        }
     </style>
 </head>
 <body>
@@ -54,47 +57,52 @@ AND Possibly a GRID CARD for each ride-->
 <br>
 <br>
 <h1 th:href="'/lands/' + ${lands}" th:text="${lands}"></h1>
-<a class="button card-link" th:href="@{/attractions}">Go back to All Lands</a>
+<a class="button card-link" th:href="@{/attractions}">Go Back to All Lands</a>
 <br>
 <br>
 <br>
-<div class="row row-cols-1 row-cols-md-2 g-4">
-    <div class="col">
-        <div th:each="RidesFound: ${allRides}" class="col s12 l4">
-            <div class="card">
-                <img src="..." class="card-img-top" alt="...">
-                <div class="card-body">
-                    <h5 class="card-title" th:href="'/rides/' + ${RidesFound.name}" th:text="${RidesFound.name}"></h5>
-                    <p class="card-text">This is a longer card with supporting text below as a natural lead-in to
-                        additional
-                        content. This content is a little bit longer.</p>
-                    <p class="card-text" th:href="'/rides/' + ${RidesFound.wait_time}"
-                       th:text="'Wait time: ' + ${RidesFound.wait_time} + ' minutes'"></p>
-                    <p class="card-text" th:href="'/rides/' + ${RidesFound.minHeight}"
-                       th:text="'Minimum height: ' + ${RidesFound.minHeight} + ' inches'"></p>
+<!--<div class="d-flex justify-content-evenly">-->
+<!--    <div class="col">-->
+<!--        <div th:each="RidesFound: ${allRides}" class="col s12 l4">-->
+<!--            <div class="card">-->
+<!--                <img src="..." class="card-img-top" alt="...">-->
+<!--                <div class="card-body">-->
+<!--                    <h5 class="card-title" th:href="'/rides/' + ${RidesFound.name}" th:text="${RidesFound.name}"></h5>-->
+<!--                    <p class="card-text">This is a longer card with supporting text below as a natural lead-in to-->
+<!--                        additional-->
+<!--                        content. This content is a little bit longer.</p>-->
+<!--                    <p class="card-text" th:href="'/rides/' + ${RidesFound.wait_time}"-->
+<!--                       th:text="'Wait time: ' + ${RidesFound.wait_time} + ' minutes'"></p>-->
+<!--                    <p class="card-text" th:href="'/rides/' + ${RidesFound.minHeight}"-->
+<!--                       th:text="'Minimum height: ' + ${RidesFound.minHeight} + ' inches'"></p>-->
+<!--                </div>-->
+<!--            </div>-->
+<!--        </div>-->
+<!--    </div>-->
+<!--</div>-->
+<div class="d-flex justify-content-evenly">
+    <div class="row">
+        <div class="row">
+            <div class="flexbox-item">
+                <div th:each="RidesFound: ${allRides}" class="col s12 l4">
+                    <div class="card border-dark text-dark bg-light mb-3" style="width: 25rem;">
+                        <img th:src="'/images/' + 'starwars.webp'" class="card-img-top" alt="star-wars">
+                        <div class="card-body">
+                            <h5 class="card-title" th:href="'/rides/' + ${RidesFound.name}" th:text="${RidesFound.name}"></h5>
+                            <p class="card-text">This is a longer card with supporting text below as a natural lead-in to
+                                additional
+                                content. This content is a little bit longer.</p>
+                            <p class="card-text" th:href="'/rides/' + ${RidesFound.wait_time}"
+                               th:text="'Wait time: ' + ${RidesFound.wait_time} + ' minutes'"></p>
+                            <p class="card-text" th:href="'/rides/' + ${RidesFound.minHeight}"
+                               th:text="'Minimum height: ' + ${RidesFound.minHeight} + ' inches'"></p>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
 </div>
-<!--<div class="chip">-->
-<!--    <h3>ALL RIDES</h3>-->
-<!--</div>-->
-<!--<div class="row">-->
-<!--    <div th:each="RidesFound: ${allRides}" class="col s12 l4">-->
-<!--        &lt;!&ndash;            Add in a photo of the Ride&ndash;&gt;-->
-<!--        <h3 th:href="'/rides/' + ${RidesFound.name}" th:text="${RidesFound.name}"></h3>-->
-<!--        <p th:href="'/rides/' + ${RidesFound.wait_time}"-->
-<!--           th:text="'Wait time: ' + ${RidesFound.wait_time} + ' minutes'"></p>-->
-<!--        <p th:href="'/rides/' + ${RidesFound.minHeight}"-->
-<!--           th:text="'Minimum height: ' + ${RidesFound.minHeight} + ' inches'"></p>-->
-<!--    </div>-->
-<!--</div>-->
-<!--            <div th:each="ridesFound: ${rideInfo}" class="col s12 l4">-->
-<!--                <p th:href="'/Food/' + ${ridesFound.name}" th:text="'$' + ${ridesFound.name}"></p>-->
-<!--                <p th:href="'/Food/' + ${ridesFound.minHeight}" th:text="'$' + ${ridesFound.minHeight}"></p>-->
-<!--            </div>-->
-
 
 </body>
 </html>
