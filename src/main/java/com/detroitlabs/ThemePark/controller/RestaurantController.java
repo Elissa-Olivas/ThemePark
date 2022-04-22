@@ -32,11 +32,4 @@ public class RestaurantController {
         modelMap.put("restaurantFood", restaurantRepository.getFoodByRestaurant(restaurantName));
         return "menu";
     }
-//    @RequestMapping("/restaurants/{restaurantName}")
-//    public String displayRestaurantDetails(@RequestParam String restaurantName, ModelMap modelMap) {
-//        modelMap.put("restaurant", restaurantRepository.searchRestaurantByName(restaurantName));
-////        modelMap.put("restaurantOneFood", restaurantRepository.getRestaurantOneFood());
-////        modelMap.put("restaurantOTwoFood", restaurantRepository.getRestaurantTwoFood());
-//        return "redirect:/restaurant-details";
-//    }
 }
