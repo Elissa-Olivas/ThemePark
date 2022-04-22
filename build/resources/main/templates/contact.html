@@ -10,6 +10,10 @@
         body {
             text-align: center;
         }
+        h1 {
+            text-align: center;
+            font-family: Copperplate, Papyrus, fantasy;
+        }
     </style>
 </head>
 <body>
@@ -46,7 +50,7 @@
     </div>
 </section>
 
-<h2>Contact Us</h2>
+<h1>Contact Us</h1>
 <h3 th:text="${companyInfo.name}"></h3>
 <p th:text="${companyInfo.phn}"></p>
 <p><a th:href="'mailto:' + ${companyInfo.address}" th:text="${companyInfo.email}"></a></p>
