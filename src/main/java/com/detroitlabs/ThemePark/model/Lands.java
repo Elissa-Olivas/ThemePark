@@ -1,7 +1,6 @@
 package com.detroitlabs.ThemePark.model;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
-import org.springframework.stereotype.Component;
 
 import java.util.List;
 
@@ -22,9 +21,9 @@ public class Lands {
     public Lands() {
 
     }
-    public Lands(int id, String name) {
+    public Lands(int id, String landName) {
         this.id = id;
-        this.name = name;
+        this.name = landName;
     }
 
     //getters and setters
