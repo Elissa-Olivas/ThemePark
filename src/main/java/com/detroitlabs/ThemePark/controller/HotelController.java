@@ -32,7 +32,7 @@ public class HotelController {
         userSearch.setLocation(userInput.get("location"));
         userSearch.setCheckInDate(userInput.get("checkin"));
         userSearch.setCheckOutDate(userInput.get("checkout"));
-        return "hotel-details";
+        return "hotel-details"; //"redirect:hotel-details" makes the button not work
 
     }
 

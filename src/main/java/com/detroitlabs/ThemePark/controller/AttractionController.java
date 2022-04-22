@@ -40,4 +40,12 @@ public class AttractionController {
         modelMap.put("allRides", attractionRepository.getRidesByLand(name));
         return "attraction-details";
     }
+
+//    @RequestMapping("/allRides")
+//    public String displayAllRides(ModelMap modelMap) throws IOException {
+//        modelMap.put("allRides", attractionRepository.ridesList());
+//        return "allRides";
+//    }
+
+
 }

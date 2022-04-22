@@ -50,7 +50,7 @@ public class AttractionRepository {
 
 
 
-    //Creates Rides
+    //Creates All Rides
     public List<Rides> ridesList() throws IOException {
         listOfRides = new ArrayList<>();
         for (int l = 0; l < allLands.size(); l++) {
