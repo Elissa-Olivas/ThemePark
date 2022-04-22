@@ -5,6 +5,15 @@
     <title>Title</title>
     <link rel="stylesheet" th:href="@{/css.css}" />
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <style>
+        body {
+            text-align: center;
+        }
+        h1 {
+            text-align: center;
+            font-family: Copperplate, Papyrus, fantasy;
+        }
+    </style>
 </head>
 <body>
 <section class="navigation">
@@ -39,18 +48,42 @@
         </nav>
     </div>
 </section>
-<div class="Lands container">
-    <div class="chip"> Restaurants </div>
+<br>
+<h1>Restaurants of Gisney</h1>
+<br>
+<a class="button card-link" th:href="@{/restaurants}">Go Back to All Restaurants</a>
+<br>
+<br>
+<div class="container-fluid">
     <div class="row">
-        <div th:each="FoodFound: ${restaurantFood}" class="col s12 l4">
-            <a th:href="'/Food/' + ${FoodFound.name}" th:text="${FoodFound.name}"></a>
-            <p th:href="'/Food/' + ${FoodFound.description}" th:text="${FoodFound.description}"> </p>
-            <p th:href="'/Food/' + ${FoodFound.price}" th:text="${FoodFound.price}"> </p>
-            <!--            <p th:href="'/Restaurants/' + ${RestaurantsFound.listOfFood}" th:text="${RestaurantsFound.listOfFood}"> </p>-->
-            <!--            button to redirect to a menu- list of food for that restaurant....NEED TO ADD LINK TO NEW PAGE-->
-            </a>
+        <div class="row" style="margin-left: 10%;">
+            <div class="col">
+                <div th:each="FoodFound: ${restaurantFood}" class="col s12 l4">
+                    <div class="card border-dark text-dark bg-light mb-3" style="width: 25rem;">
+                        <img th:src="'/images/' + 'starwars.webp'" class="card-img-top" alt="star-wars">
+                        <div class="card-body">
+                            <h4 th:href="'/Food/' + ${FoodFound.name}" th:text="${FoodFound.name}"></h4>
+                            <p th:href="'/Food/' + ${FoodFound.description}" th:text="${FoodFound.description}"> </p>
+                            <p th:href="'/Food/' + ${FoodFound.price}" th:text="'$' + ${FoodFound.price}"> </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 </div>
+<!--<div class="Lands container">-->
+<!--    <div class="chip"> Restaurants </div>-->
+<!--    <div class="row">-->
+<!--        <div th:each="FoodFound: ${restaurantFood}" class="col s12 l4">-->
+<!--            <a th:href="'/Food/' + ${FoodFound.name}" th:text="${FoodFound.name}"></a>-->
+<!--            <p th:href="'/Food/' + ${FoodFound.description}" th:text="${FoodFound.description}"> </p>-->
+<!--            <p th:href="'/Food/' + ${FoodFound.price}" th:text="${FoodFound.price}"> </p>-->
+<!--            &lt;!&ndash;            <p th:href="'/Restaurants/' + ${RestaurantsFound.listOfFood}" th:text="${RestaurantsFound.listOfFood}"> </p>&ndash;&gt;-->
+<!--            &lt;!&ndash;            button to redirect to a menu- list of food for that restaurant....NEED TO ADD LINK TO NEW PAGE&ndash;&gt;-->
+<!--            </a>-->
+<!--        </div>-->
+<!--    </div>-->
+<!--</div>-->
 </body>
 </html>
