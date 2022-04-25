@@ -7,6 +7,18 @@ public class UserSearch {
     private String location;
     private String checkInDate;
     private String checkOutDate;
+    private int minHeight;
+
+    public UserSearch() {
+
+    }
+    public int getMinHeight() {
+        return minHeight;
+    }
+
+    public void setMinHeight(int minHeight) {
+        this.minHeight = minHeight;
+    }
 
     public String getLocation() {
         return location;

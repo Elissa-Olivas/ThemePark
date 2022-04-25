@@ -150,9 +150,14 @@ article {
     margin: 0 auto;
     padding: 10px;
 }
+
+
+
+/*backgrounud color gradient*/
 body {
     background-image: linear-gradient(to left top, #03338d, #005fb4, #0089ce, #00b3de, #02dbe7);
 }
+
 
 /*//buttons*/
   .button {
@@ -190,5 +195,9 @@ body {
     background: -moz-linear-gradient(top, #00527c, #00b2de);
     background: linear-gradient(to bottom, #00527c, #00b2de);
 }
+
+
+/*Height Slider CSS*/
+
 
 

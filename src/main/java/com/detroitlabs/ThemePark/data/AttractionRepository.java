@@ -79,16 +79,6 @@ public class AttractionRepository {
         return ridesPerLand;
     }
 
-
-    public Object findById(int id) {
-        for (Lands landByID : allLands) {
-            if (landByID.getId() == id) {
-                return id;
-            }
-        }
-        return null;
-    }
-
     public String findByName(String name) {
         for (Lands landByName : allLands) {
             if (landByName.getName().equals(name)) {
@@ -123,16 +113,25 @@ public class AttractionRepository {
     }
 
 
-public List<Rides> ridesByHeight;
     //find by height
-    public Rides findByHeight(int minHeight) {
-        ridesByHeight = new ArrayList<>();
-        for (Rides ridesByHeight : listOfRides) {
-            if (ridesByHeight.getMinHeight() == minHeight) {
-                return ridesByHeight;
+    public List<Rides> findByHeightOver32(int minHeight) {
+        List<Rides> ridesByHeight32 = new ArrayList<>();
+        for (Rides rides : listOfRides) {
+            if (rides.getMinHeight() >= minHeight) {
+                ridesByHeight32.add(rides);
             }
         }
-        return null;
+        return ridesByHeight32;
+    }
+
+    public List<Rides> findByHeightOver40(int minHeight) {
+        List<Rides> ridesByHeightOver40 = new ArrayList<>();
+        for (Rides rides : listOfRides) {
+            if (rides.getMinHeight() >= minHeight) {
+                ridesByHeightOver40.add(rides);
+            }
+        }
+        return ridesByHeightOver40;
     }
 }
 
