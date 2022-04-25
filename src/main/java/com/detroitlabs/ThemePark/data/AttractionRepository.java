@@ -114,24 +114,24 @@ public class AttractionRepository {
 
 
     //find by height
-    public List<Rides> findByHeightOver32(int minHeight) {
+    public List<Rides> findByHeightUnder32(int minHeight) {
         List<Rides> ridesByHeight32 = new ArrayList<>();
         for (Rides rides : listOfRides) {
-            if (rides.getMinHeight() >= minHeight) {
+            if (rides.getMinHeight() < minHeight) {
                 ridesByHeight32.add(rides);
             }
         }
         return ridesByHeight32;
     }
 
-    public List<Rides> findByHeightOver40(int minHeight) {
-        List<Rides> ridesByHeightOver40 = new ArrayList<>();
+    public List<Rides> findByHeightOver32(int minHeight) {
+        List<Rides> ridesByHeightOver32 = new ArrayList<>();
         for (Rides rides : listOfRides) {
             if (rides.getMinHeight() >= minHeight) {
-                ridesByHeightOver40.add(rides);
+                ridesByHeightOver32.add(rides);
             }
         }
-        return ridesByHeightOver40;
+        return ridesByHeightOver32;
     }
 }
 

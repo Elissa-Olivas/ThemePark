@@ -57,16 +57,16 @@ public class AttractionController {
 //
 //    }
 //
-    @RequestMapping("/allRides/ridesOver32")
+    @RequestMapping("/allRides/ridesUnder32")
     public String displayRidesOver32Details(ModelMap modelMap) throws IOException {
-        modelMap.put("allRides", attractionRepository.findByHeightOver32(32));
-        return "ridesOver32";
+        modelMap.put("allRides", attractionRepository.findByHeightUnder32(32));
+        return "ridesUnder32";
     }
 
-    @RequestMapping("/allRides/ridesOver40")
+    @RequestMapping("/allRides/ridesOver32")
     public String displayRidesOver40Details(ModelMap modelMap) throws IOException {
-        modelMap.put("allRides", attractionRepository.findByHeightOver40(40));
-        return "ridesOver40";
+        modelMap.put("allRides", attractionRepository.findByHeightOver32(32));
+        return "ridesOver32";
     }
 
 //    @RequestMapping("/allRides/{minHeight}")
