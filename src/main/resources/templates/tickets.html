@@ -55,13 +55,14 @@
 <br>
 <br>
 <br>
-<div class="d-flex justify-content-evenly">
+<div class="d-flex justify-content-around" style="justify-content: space-around; margin-left: 7%;">
     <div class="row">
+        <div th:each="TicketsFound: ${tickets}" class="col s12 l4" >
         <div class="row" >
             <div class="col">
-                <div th:each="TicketsFound: ${tickets}" class="col s12 l4">
-                    <div class="card border-dark text-dark bg-light mb-3" style="width: 25rem;">
-                        <img th:src="'/images/' + 'starwars.webp'" class="card-img-top" alt="star-wars">
+                    <div class="card border-dark border-4 text-dark bg-light mb-3" style="width: 25rem;">
+                        <img th:src="'/images/' + 'tickets.jpg'" class="card-img-top" alt="star-wars">
+                        <hr>
                         <div class="card-body">
                             <p th:href="'/tickets/' + ${TicketsFound.ticketType}"
                                th:text="${TicketsFound.ticketType}"></p>
@@ -77,18 +78,8 @@
     </div>
 </div>
 <a class="button card-link"  th:href="@{/tickets}">Purchase Your Tickets Now</a>
-
-<!--<div class="row">-->
-<!--    <div th:each="TicketsFound: ${tickets}" class="col s12 l4">-->
-<!--        &lt;!&ndash;        private String ticketType;      //infant, child, adult, senior&ndash;&gt;-->
-<!--        &lt;!&ndash;        private int numOfDays;&ndash;&gt;-->
-<!--        &lt;!&ndash;        private double price;&ndash;&gt;-->
-<!--        <p th:href="'/tickets/' + ${TicketsFound.ticketType}" th:text="${TicketsFound.ticketType}"></p>-->
-<!--        <p th:href="'/tickets/' + ${TicketsFound.numOfDays}"-->
-<!--           th:text="${TicketsFound.numOfDays} + ' days'"></p>-->
-<!--        <p th:href="'/tickets/' + ${TicketsFound.price}"-->
-<!--           th:text="'$' + ${TicketsFound.price} + ' /day'"></p>-->
-<!--    </div>-->
-<!--</div>-->
+<br>
+<br>
+<br>
 </body>
 </html>

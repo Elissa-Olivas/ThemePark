@@ -53,16 +53,16 @@
 <br>
 <h1>Restaurants of Gisney</h1>
 <br>
-<div class="d-flex justify-content-evenly">
+<div class="d-flex justify-content-around" style="justify-content: space-around; margin-left: 7%;">
     <div class="row">
+        <div th:each="RestaurantsFound: ${restaurant}" class="col s12 l4">
         <div class="row" >
             <div class="col">
-                <div th:each="RestaurantsFound: ${restaurant}" class="col s12 l4">
-                    <div class="card border-dark text-dark bg-light mb-3" style="width: 25rem;">
-                        <img th:src="'/images/' + 'starwars.webp'" class="card-img-top" alt="star-wars">
+                    <div class="card border-dark border-2 text-dark bg-light mb-3" style="width: 25rem;">
+                        <img th:src="'/images/' + 'dining.jpeg'" class="card-img-top" alt="dining">
                         <div class="card-body">
-                            <p th:href="'/Restaurants/' + ${RestaurantsFound.restaurantName}"
-                               th:text="${RestaurantsFound.restaurantName}"></p>
+                            <h4 th:href="'/Restaurants/' + ${RestaurantsFound.restaurantName}"
+                               th:text="${RestaurantsFound.restaurantName}"></h4>
                             <p th:href="'/Restaurants/' + ${RestaurantsFound.hours}"
                                th:text="${RestaurantsFound.hours}"></p>
                             <p th:href="'/Restaurants/' + ${RestaurantsFound.location}"

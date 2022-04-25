@@ -16,7 +16,7 @@
 
         .section {
             position: relative;
-            height: 100vh;
+            height: 70vh;
         }
 
         .section .section-center {
@@ -257,7 +257,7 @@
                         <div class="form-header">
                             <h1>Make your reservation</h1>
                         </div>
-                        <form th:action="@{/hotels}" method="post">
+                        <form action="hotel-results" method="get">
                             <div class="form-group">
                                 <input name="location" class="form-control" type="text"
                                        placeholder="Country, ZIP, city...">

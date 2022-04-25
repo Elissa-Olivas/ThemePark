@@ -41,11 +41,20 @@ public class AttractionController {
         return "attraction-details";
     }
 
-//    @RequestMapping("/allRides")
-//    public String displayAllRides(ModelMap modelMap) throws IOException {
-//        modelMap.put("allRides", attractionRepository.ridesList());
-//        return "allRides";
-//    }
+    @RequestMapping("/allRides")
+    public String displayAllRides(ModelMap modelMap) throws IOException {
+//        List<Rides> settingHeight = attractionRepository.setRidesListWithHeight();
+//        modelMap.put("allRides", settingHeight);
+        modelMap.put("allRides", attractionRepository.ridesList());
+        return "allRides";
+    }
+
+    @RequestMapping("/allRides/{minHeight}")
+    public String displayAllRides(@PathVariable int minHeight, ModelMap modelMap) throws IOException {
+        Rides ridesByHeight = attractionRepository.findByHeight(minHeight);
+        modelMap.put("allRides", attractionRepository.ridesList());
+        return "allRides";
+    }
 
 
 }

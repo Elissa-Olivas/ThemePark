@@ -54,12 +54,12 @@
 <a class="button card-link" th:href="@{/restaurants}">Go Back to All Restaurants</a>
 <br>
 <br>
-<div class="d-flex justify-content-evenly">
+<div class="d-flex justify-content-around" style="justify-content: space-around; margin-left: 7%;">
     <div class="row">
+        <div th:each="FoodFound: ${restaurantFood}" class="col s12 l4">
         <div class="row" >
             <div class="col">
-                <div th:each="FoodFound: ${restaurantFood}" class="col s12 l4">
-                    <div class="card border-dark text-dark bg-light mb-3" style="width: 25rem;">
+                    <div class="card border-dark border-2 text-dark bg-light mb-3" style="width: 25rem;">
                         <img th:src="'/images/' + 'starwars.webp'" class="card-img-top" alt="star-wars">
                         <div class="card-body">
                             <h4 th:href="'/Food/' + ${FoodFound.name}" th:text="${FoodFound.name}"></h4>
