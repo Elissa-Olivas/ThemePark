@@ -4,12 +4,22 @@ import java.util.List;
 
 public class Restaurants {
     private String restaurantName;
+    private String picID;
     private String hours;
     private String location;
     private List<Food> listOfFood;
 
-    public Restaurants(String restaurantName, String hours, String location, List<Food> listOfFood) {
+    public String getPicID() {
+        return picID;
+    }
+
+    public void setPicID(String picID) {
+        this.picID = picID;
+    }
+
+    public Restaurants(String restaurantName, String picID, String hours, String location, List<Food> listOfFood) {
         this.restaurantName = restaurantName;
+        this.picID = picID;
         this.hours = hours;
         this.location = location;
         this.listOfFood = listOfFood;

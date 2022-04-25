@@ -45,12 +45,12 @@ public class RestaurantRepository {
             new Food("Chips", "Falors: Original, Salt and Vinegar, Sirracha Sunrise, Maui Onion, Baked Sour Cream and Onion, Plantain, Vegan White Cheddar", 4));
 
     public static final List<Restaurants> ALL_RESTAURANTS = Arrays.asList(
-            new Restaurants("Cocina Cucamonga Mexican Grill", "11am-7pm", "Fantasyland", restaurantOneFood),
-            new Restaurants("Pizza Planet", "10:30am-7pm", "Tomorrowland", restaurantTwoFood),
-            new Restaurants("Frosted Treats", "11:00am-7:00pm", "Fantasyland", restaurantThreeFood),
-            new Restaurants("Plaza Inn", "08:00am-12:pm", "Main Street, U.S.A", restaurantFourFood),
-            new Restaurants("Blue Bayou Restaurant", "11:00am-10:00pm", "New Orleans Square", restaurantFiveFood),
-            new Restaurants("The Tropical Hideaway", "08:00am-12:00am", "Adventureland", restaurantSixFood));
+            new Restaurants("Cocina Cucamonga Mexican Grill", "cocina", "11am-7pm", "Fantasyland", restaurantOneFood),
+            new Restaurants("Pizza Planet", "pizzaplanet", "10:30am-7pm", "Tomorrowland", restaurantTwoFood),
+            new Restaurants("Frosted Treats", "frostedtreats", "11:00am-7:00pm", "Fantasyland", restaurantThreeFood),
+            new Restaurants("Plaza Inn", "plazainn", "08:00am-12:pm", "Main Street, U.S.A", restaurantFourFood),
+            new Restaurants("Blue Bayou Restaurant", "bayou", "11:00am-10:00pm", "New Orleans Square", restaurantFiveFood),
+            new Restaurants("The Tropical Hideaway", "tropical", "08:00am-12:00am", "Adventureland", restaurantSixFood));
 
     public static List<Food> getRestaurantOneFood() {
         return restaurantOneFood;

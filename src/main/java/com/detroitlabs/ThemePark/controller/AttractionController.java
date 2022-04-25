@@ -38,25 +38,7 @@ public class AttractionController {
         modelMap.put("allRides", attractionRepository.ridesList());
         return "allRides";
     }
-//    @GetMapping("/allRides")
-//    public String displayAllRides(ModelMap modelMap) throws IOException {
-//        modelMap.put("allRides", attractionRepository.ridesList());
-//        return "allRides";
-//    }
-//
-//    @RequestMapping(value = "/ride-results/**", method = RequestMethod.GET)
-//    public String routeToRideDetailOver30(@RequestParam Map<Integer, Integer> userInput) {
-//        userSearch.setMinHeight(userInput.get("ridesOver32"));
-//        return "redirect:ridesOver32";
-//
-//    }
-//    @RequestMapping(value = "/ride-results2/**", method = RequestMethod.GET)
-//    public String routeToRideDetailOver40(@RequestParam Map<Integer, Integer> userInput) {
-//        userSearch.setMinHeight(userInput.get("ridesOver40"));
-//        return "redirect:ridesOver40";
-//
-//    }
-//
+
     @RequestMapping("/allRides/ridesUnder32")
     public String displayRidesOver32Details(ModelMap modelMap) throws IOException {
         modelMap.put("allRides", attractionRepository.findByHeightUnder32(32));
@@ -68,14 +50,6 @@ public class AttractionController {
         modelMap.put("allRides", attractionRepository.findByHeightOver32(32));
         return "ridesOver32";
     }
-
-//    @RequestMapping("/allRides/{minHeight}")
-//    public String displayAllRides(@PathVariable int minHeight, ModelMap modelMap) throws IOException {
-//        List<Rides> ridesByHeight = attractionRepository.findByHeight(minHeight);
-////        modelMap.put("allRides", attractionRepository.ridesList());
-//        modelMap.put("allRides", ridesByHeight);
-//        return "ridesOver32";
-//    }
 
 
 }
