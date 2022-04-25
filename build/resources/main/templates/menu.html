@@ -54,13 +54,13 @@
 <a class="button card-link" th:href="@{/restaurants}">Go Back to All Restaurants</a>
 <br>
 <br>
-<div class="d-flex justify-content-around" style="justify-content: space-around; margin-left: 7%;">
+<div class="d-flex justify-content-around" style="justify-content: space-around; ">
     <div class="row">
         <div th:each="FoodFound: ${restaurantFood}" class="col s12 l4">
-        <div class="row" >
-            <div class="col">
+            <div class="row">
+                <div class="flexbox-item">
                     <div class="card border-dark border-2 text-dark bg-light mb-3" style="width: 25rem;">
-                        <img th:src="'/images/' + 'starwars.webp'" class="card-img-top" alt="star-wars">
+                        <img th:src="'/images/' + 'characterDining.webp'" class="card-img-top" alt="dining">
                         <div class="card-body">
                             <h4 th:href="'/Food/' + ${FoodFound.name}" th:text="${FoodFound.name}"></h4>
                             <p th:href="'/Food/' + ${FoodFound.description}" th:text="${FoodFound.description}"> </p>
@@ -72,18 +72,5 @@
         </div>
     </div>
 </div>
-<!--<div class="Lands container">-->
-<!--    <div class="chip"> Restaurants </div>-->
-<!--    <div class="row">-->
-<!--        <div th:each="FoodFound: ${restaurantFood}" class="col s12 l4">-->
-<!--            <a th:href="'/Food/' + ${FoodFound.name}" th:text="${FoodFound.name}"></a>-->
-<!--            <p th:href="'/Food/' + ${FoodFound.description}" th:text="${FoodFound.description}"> </p>-->
-<!--            <p th:href="'/Food/' + ${FoodFound.price}" th:text="${FoodFound.price}"> </p>-->
-<!--            &lt;!&ndash;            <p th:href="'/Restaurants/' + ${RestaurantsFound.listOfFood}" th:text="${RestaurantsFound.listOfFood}"> </p>&ndash;&gt;-->
-<!--            &lt;!&ndash;            button to redirect to a menu- list of food for that restaurant....NEED TO ADD LINK TO NEW PAGE&ndash;&gt;-->
-<!--            </a>-->
-<!--        </div>-->
-<!--    </div>-->
-<!--</div>-->
 </body>
 </html>
