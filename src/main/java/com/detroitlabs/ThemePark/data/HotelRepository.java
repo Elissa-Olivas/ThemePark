@@ -34,6 +34,26 @@ public class HotelRepository {     //Data,Body,SearchResults, Results (hotel nam
     }
 
 
+//    public void generateHotels(String location, String checkIn, String checkout) throws IOException {
+//        allHotels = new ArrayList<>();
+//        int locationId = HotelService.fetchDestinationId(location).getSuggestions().get(0).getEntities().get(0).getDestinationId();
+//        HotelResponse hotelResponse = HotelService.fetchHotelDetails(locationId, checkIn, checkout);
+//        for (int h = 0; h < 9; h++) {
+//            String name = hotelResponse.getData().getBody().getSearchResults().getResults().get(h).getName();
+//            String starRating = hotelResponse.getData().getBody().getSearchResults().getResults().get(h).getStarRating();
+//            String streetAddress = hotelResponse.getData().getBody().getSearchResults().getResults().get(h).getAddress().getStreetAddress();
+//            String locality = hotelResponse.getData().getBody().getSearchResults().getResults().get(h).getAddress().getLocality();
+//            String region = hotelResponse.getData().getBody().getSearchResults().getResults().get(h).getAddress().getRegion();
+//            String postalCode = hotelResponse.getData().getBody().getSearchResults().getResults().get(h).getAddress().getPostalCode();
+//
+//
+//            double lat = hotelResponse.getData().getBody().getSearchResults().getResults().get(h).getCoordinate().getLat();
+//            double lon = hotelResponse.getData().getBody().getSearchResults().getResults().get(h).getCoordinate().getLon();
+//
+//            allHotels.add(new Hotel(name, starRating, streetAddress, locality, region, postalCode, lat, lon));
+//        }
+//    }
+
     public void generateHotels(String location, String checkIn, String checkout) throws IOException {
         allHotels = new ArrayList<>();
         int locationId = HotelService.fetchDestinationId(location).getSuggestions().get(0).getEntities().get(0).getDestinationId();
@@ -49,10 +69,10 @@ public class HotelRepository {     //Data,Body,SearchResults, Results (hotel nam
 
             double lat = hotelResponse.getData().getBody().getSearchResults().getResults().get(h).getCoordinate().getLat();
             double lon = hotelResponse.getData().getBody().getSearchResults().getResults().get(h).getCoordinate().getLon();
-//            String price = hotelResponse.getData().getBody().getSearchResults().getResults().get(h).getRateplan().getPrice().getCurrent();
-//            String image = hotelResponse.getData().getBody().getSearchResults().getResults().get(h).getOptimizedThumbUrl().getSrpDesktop();
+            String current = hotelResponse.getData().getBody().getSearchResults().getResults().get(h).getRateplan().getPrice().getCurrent();
+            String srpDesktop = hotelResponse.getData().getBody().getSearchResults().getResults().get(h).getOptimizedThumbUrl().getSrpDesktop();
 
-            allHotels.add(new Hotel(name, starRating, streetAddress, locality, region, postalCode, lat, lon));
+            allHotels.add(new Hotel(name, starRating, streetAddress, locality, region, postalCode, lat, lon, current, srpDesktop));
         }
     }
 

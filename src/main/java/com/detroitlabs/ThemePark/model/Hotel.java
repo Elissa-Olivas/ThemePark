@@ -12,8 +12,8 @@ public class Hotel {
     private String postalCode;                   //zipcode
     private double lat;
     private double lon;
-    private String price;                      //price of hotel
-    private String hotelImage;                //picture of hotel
+    private String current;                      //price of hotel
+    private String srpDesktop;                //picture of hotel
 
 
     public Hotel(String name, String starRating, String streetAddress, String locality, String region, String postalCode, double lat, double lon) {
@@ -28,7 +28,7 @@ public class Hotel {
     }
 
 
-    public Hotel(String name, String starRating, String streetAddress, String locality, String region, String postalCode, double lat, double lon, String price, String hotelImage) {
+    public Hotel(String name, String starRating, String streetAddress, String locality, String region, String postalCode, double lat, double lon, String current, String srpDesktop) {
         this.name = name;
         this.starRating = starRating;
         this.streetAddress = streetAddress;
@@ -37,8 +37,8 @@ public class Hotel {
         this.postalCode = postalCode;
         this.lat = lat;
         this.lon = lon;
-        this.price = price;
-        this.hotelImage = hotelImage;
+        this.current = current;
+        this.srpDesktop = srpDesktop;
     }
 
     //setters and getters
@@ -106,20 +106,20 @@ public class Hotel {
         this.lon = lon;
     }
 
-    public String getPrice() {
-        return price;
+    public String getCurrent() {
+        return current;
     }
 
-    public void setPrice(String current) {
-        this.price = price;
+    public void setCurrent(String current) {
+        this.current = current;
     }
 
-    public String getHotelImage() {
-        return hotelImage;
+    public String getSrpDesktop() {
+        return srpDesktop;
     }
 
-    public void setHotelImage(String hotelImage) {
-        this.hotelImage = hotelImage;
+    public void setSrpDesktop(String srpDesktop) {
+        this.srpDesktop = srpDesktop;
     }
 
     public String getFullAddress() {

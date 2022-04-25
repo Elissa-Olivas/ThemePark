@@ -1,5 +1,8 @@
 package com.detroitlabs.ThemePark.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
+@JsonIgnoreProperties(ignoreUnknown = true)
 public class Rateplan {
     private Price price;
 
