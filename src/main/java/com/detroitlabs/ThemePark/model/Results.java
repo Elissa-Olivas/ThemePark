@@ -12,18 +12,22 @@ public class Results {
     private OptimizedThumbUrl optimizedThumbUrl;
     private Coordinate coordinate;
 
+    @JsonProperty("optimizedThumbUrls")
     public OptimizedThumbUrl getOptimizedThumbUrl() {
         return optimizedThumbUrl;
     }
 
+    @JsonProperty("optimizedThumbUrls")
     public void setOptimizedThumbUrl(OptimizedThumbUrl optimizedThumbUrl) {
         this.optimizedThumbUrl = optimizedThumbUrl;
     }
 
+    @JsonProperty("ratePlan")
     public Rateplan getRateplan() {
         return rateplan;
     }
 
+    @JsonProperty("ratePlan")
     public void setRateplan(Rateplan rateplan) {
         this.rateplan = rateplan;
     }
