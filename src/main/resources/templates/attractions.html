@@ -60,7 +60,8 @@
             <div class="row">
                 <div class="flexbox-item">
                     <div class="card border-dark border-2 text-dark bg-light mb-3" style="width: 25rem;">
-                        <img th:src="'/images/' + 'starwars.webp'" class="card-img-top" alt="star-wars">
+<!--                        <img th:src="'/images/' + 'starwars.jpeg'" class="card-img-top" alt="star-wars">-->
+                        <img th:src="@{'/images/' + ${LandsFound.picID} + '.jpeg'}"style="height: 250px; width: auto;"/>
                         <div class="card-body">
                             <p class="card-text"><a th:href="'/attraction-details/' + ${LandsFound.name}"
                                                     th:text="${LandsFound.name}"></a></p>

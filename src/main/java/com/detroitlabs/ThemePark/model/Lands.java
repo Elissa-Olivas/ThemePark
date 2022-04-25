@@ -9,13 +9,23 @@ import java.util.List;
 public class Lands {
     private int id;
     private String name;
+    private String picID;
     private List<Rides> rides;     //list of rights in that land
 
     //constructor
-    public Lands(int id, String name, List<Rides> rides) {
+    public Lands(int id, String name, String picID, List<Rides> rides) {
         this.id = id;
         this.name = name;
+        this.picID = picID;
         this.rides = rides;
+    }
+
+    public String getPicID() {
+        return picID;
+    }
+
+    public void setPicID(String picID) {
+        this.picID = picID;
     }
 
     public Lands() {

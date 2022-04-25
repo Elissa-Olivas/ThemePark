@@ -38,7 +38,7 @@ public class AttractionRepository {
         parkData = ParkService.fetchAttractionData();
         allLands = new ArrayList<>();
         for (int i = 0; i < 9; i++) {
-            allLands.add(new Lands(parkData.getLands().get(i).getId(), parkData.getLands().get(i).getName(), parkData.getLands().get(i).getRides()));
+            allLands.add(new Lands(parkData.getLands().get(i).getId(), parkData.getLands().get(i).getName(), returnImage(parkData.getLands().get(i).getName()), parkData.getLands().get(i).getRides()));
         }
         return allLands;
     }
@@ -109,6 +109,36 @@ public class AttractionRepository {
         }
         else {
             return 0;
+        }
+    }
+
+    public String returnImage(String name) {
+        if (name.equals("Adventureland")) {
+            return "adventureland";
+        }
+        else if (name.equals("Critter Country")) {
+            return "crittercountry";
+        }
+        else if (name.equals("Fantasyland")) {
+            return "fantasyland";
+        }
+        else if (name.equals("Frontierland")) {
+            return "frontierland";
+        }
+        else if (name.equals("Main Street U.S.A")) {
+            return "mainstreet";
+        }
+        else if (name.equals("Mickey's Toontown")) {
+            return "toontown";
+        }
+        else if (name.equals("New Orleans Square")) {
+            return "orleans";
+        }
+        else if (name.equals("Star Wars: Galaxy's Edge")) {
+            return "starwars";
+        }
+        else {
+            return "tomorrowland";
         }
     }
 
