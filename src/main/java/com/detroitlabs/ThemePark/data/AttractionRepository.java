@@ -55,9 +55,10 @@ public class AttractionRepository {
         listOfRides = new ArrayList<>();
         for (int l = 0; l < allLands.size(); l++) {
             for (int i = 0; i < allLands.get(l).getRides().size(); i++) {
-                listOfRides.add(new Rides(allLands.get(l).getRides().get(i).getId(), allLands.get(l).getRides().get(i).getName(),
-                        allLands.get(l).getRides().get(i).isIs_open(), allLands.get(l).getRides().get(i).getWait_time(),
-                        allLands.get(l).getRides().get(i).getLast_updated(), allLands.get(l).getRides().get(i).getMinHeight()));
+                Rides ride = allLands.get(l).getRides().get(i);
+                listOfRides.add(new Rides(ride.getId(), ride.getName(),
+                        ride.isIs_open(), allLands.get(l).getRides().get(i).getWait_time(),
+                        ride.getLast_updated(), returnHeightOfRide(ride.getName())));
             }
         }
         return listOfRides;
@@ -97,86 +98,36 @@ public class AttractionRepository {
         return null;
     }
 
-//    private List<Rides> listOfRidesWithHeight;
-//    //setting height requirements
-//    //GIVE NULL POINTER EXCEPTION
-//    public List<Rides> setRidesListWithHeight() throws IOException {
-//        listOfRidesWithHeight = new ArrayList<>();
-//        for (int l = 0; l < allLands.size(); l++) {
-//            for (int i = 0; i < allLands.get(l).getRides().size(); i++) {
-//                listOfRidesWithHeight.add(new Rides(allLands.get(l).getRides().get(i).getId(), allLands.get(l).getRides().get(i).getName(),
-//                        allLands.get(l).getRides().get(i).isIs_open(), allLands.get(l).getRides().get(i).getWait_time(),
-//                        allLands.get(l).getRides().get(i).getLast_updated(), allLands.get(l).getRides().get(i).getMinHeight()));
-//
-//                if (allLands.get(l).getRides().get(i).getName().equals("Autopia")) {
-//                    allLands.get(l).getRides().get(i).setMinHeight(32);
-//                    listOfRidesWithHeight.add(new Rides(allLands.get(l).getRides().get(i).getId(), allLands.get(l).getRides().get(i).getName(),
-//                            allLands.get(l).getRides().get(i).isIs_open(), allLands.get(l).getRides().get(i).getWait_time(),
-//                            allLands.get(l).getRides().get(i).getLast_updated(), allLands.get(l).getRides().get(i).getMinHeight()));
-//                }
-//                if (listOfRides.get(l).getName().equals("Gadget's Go Coster")) {
-//                    listOfRides.get(l).setMinHeight(35);
-//                    listOfRidesWithHeight.add(new Rides(allLands.get(l).getRides().get(i).getId(), allLands.get(l).getRides().get(i).getName(),
-//                            allLands.get(l).getRides().get(i).isIs_open(), allLands.get(l).getRides().get(i).getWait_time(),
-//                            allLands.get(l).getRides().get(i).getLast_updated(), allLands.get(l).getRides().get(i).getMinHeight()));
-//                }
-//                if (listOfRides.get(l).getName().equals("Millennium Falcon: Smugglers Run")) {
-//                    listOfRides.get(l).setMinHeight(38);
-//                    listOfRidesWithHeight.add(new Rides(allLands.get(l).getRides().get(i).getId(), allLands.get(l).getRides().get(i).getName(),
-//                            allLands.get(l).getRides().get(i).isIs_open(), allLands.get(l).getRides().get(i).getWait_time(),
-//                            allLands.get(l).getRides().get(i).getLast_updated(), allLands.get(l).getRides().get(i).getMinHeight()));
-//                }
-//                if (listOfRides.get(l).getName().equals("Big Thunder Mountain Railroad")) {
-//                    listOfRides.get(l).setMinHeight(40);
-//                    listOfRidesWithHeight.add(new Rides(allLands.get(l).getRides().get(i).getId(), allLands.get(l).getRides().get(i).getName(),
-//                            allLands.get(l).getRides().get(i).isIs_open(), allLands.get(l).getRides().get(i).getWait_time(),
-//                            allLands.get(l).getRides().get(i).getLast_updated(), allLands.get(l).getRides().get(i).getMinHeight()));
-//                }
-//                if (listOfRides.get(l).getName().equals("Space Mountain")) {
-//                    listOfRides.get(l).setMinHeight(40);
-//                    listOfRidesWithHeight.add(new Rides(allLands.get(l).getRides().get(i).getId(), allLands.get(l).getRides().get(i).getName(),
-//                            allLands.get(l).getRides().get(i).isIs_open(), allLands.get(l).getRides().get(i).getWait_time(),
-//                            allLands.get(l).getRides().get(i).getLast_updated(), allLands.get(l).getRides().get(i).getMinHeight()));
-//                }
-//                if (listOfRides.get(l).getName().equals("Splash Mountain")) {
-//                    listOfRides.get(l).setMinHeight(40);
-//                    listOfRidesWithHeight.add(new Rides(allLands.get(l).getRides().get(i).getId(), allLands.get(l).getRides().get(i).getName(),
-//                            allLands.get(l).getRides().get(i).isIs_open(), allLands.get(l).getRides().get(i).getWait_time(),
-//                            allLands.get(l).getRides().get(i).getLast_updated(), allLands.get(l).getRides().get(i).getMinHeight()));
-//                }
-//                if (listOfRides.get(l).getName().equals("Star Tours")) {
-//                    listOfRides.get(l).setMinHeight(40);
-//                    listOfRidesWithHeight.add(new Rides(allLands.get(l).getRides().get(i).getId(), allLands.get(l).getRides().get(i).getName(),
-//                            allLands.get(l).getRides().get(i).isIs_open(), allLands.get(l).getRides().get(i).getWait_time(),
-//                            allLands.get(l).getRides().get(i).getLast_updated(), allLands.get(l).getRides().get(i).getMinHeight()));
-//                }
-//                if (listOfRides.get(l).getName().equals("Star Wars: Rise of the Resistance")) {
-//                    listOfRides.get(l).setMinHeight(40);
-//                    listOfRidesWithHeight.add(new Rides(allLands.get(l).getRides().get(i).getId(), allLands.get(l).getRides().get(i).getName(),
-//                            allLands.get(l).getRides().get(i).isIs_open(), allLands.get(l).getRides().get(i).getWait_time(),
-//                            allLands.get(l).getRides().get(i).getLast_updated(), allLands.get(l).getRides().get(i).getMinHeight()));
-//                }
-//                if (listOfRides.get(l).getName().equals("MMatterhorn Bobsleds")) {
-//                    listOfRides.get(l).setMinHeight(42);
-//                    listOfRidesWithHeight.add(new Rides(allLands.get(l).getRides().get(i).getId(), allLands.get(l).getRides().get(i).getName(),
-//                            allLands.get(l).getRides().get(i).isIs_open(), allLands.get(l).getRides().get(i).getWait_time(),
-//                            allLands.get(l).getRides().get(i).getLast_updated(), allLands.get(l).getRides().get(i).getMinHeight()));
-//                }
-//                if (listOfRides.get(l).getName().equals("Indiana Jones Adventure")) {
-//                    listOfRides.get(l).setMinHeight(46);
-//                    listOfRidesWithHeight.add(new Rides(allLands.get(l).getRides().get(i).getId(), allLands.get(l).getRides().get(i).getName(),
-//                            allLands.get(l).getRides().get(i).isIs_open(), allLands.get(l).getRides().get(i).getWait_time(),
-//                            allLands.get(l).getRides().get(i).getLast_updated(), allLands.get(l).getRides().get(i).getMinHeight()));
-//                }
-//            }
-//        }
-//            return listOfRidesWithHeight;
-//    }
+    public int returnHeightOfRide(String name) {
+        if (name.equals("Autopia")) {
+            return 32;
+        }
+        else if (name.equals("Gadget's Go Coster")) {
+            return 35;
+        }
+        else if (name.equals("Millennium Falcon: Smugglers Run")) {
+            return 38;
+        }
+        else if (name.equals("Big Thunder Mountain Railroad") || name.equals("Space Mountain") || name.equals("Star Tours") || name.equals("Star Wars: Rise of the Resistance")) {
+            return 40;
+        }
+        else if (name.equals("Matterhorn Bobsleds")) {
+            return 42;
+        }
+        else if (name.equals("Indiana Jones Adventure")) {
+            return 46;
+        }
+        else {
+            return 0;
+        }
+    }
 
 
+public List<Rides> ridesByHeight;
     //find by height
     public Rides findByHeight(int minHeight) {
-        for (Rides ridesByHeight : rides) {
+        ridesByHeight = new ArrayList<>();
+        for (Rides ridesByHeight : listOfRides) {
             if (ridesByHeight.getMinHeight() == minHeight) {
                 return ridesByHeight;
             }

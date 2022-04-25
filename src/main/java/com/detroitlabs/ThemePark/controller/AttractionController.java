@@ -43,11 +43,10 @@ public class AttractionController {
 
     @RequestMapping("/allRides")
     public String displayAllRides(ModelMap modelMap) throws IOException {
-//        List<Rides> settingHeight = attractionRepository.setRidesListWithHeight();
-//        modelMap.put("allRides", settingHeight);
         modelMap.put("allRides", attractionRepository.ridesList());
         return "allRides";
     }
+
 
     @RequestMapping("/allRides/{minHeight}")
     public String displayAllRides(@PathVariable int minHeight, ModelMap modelMap) throws IOException {
