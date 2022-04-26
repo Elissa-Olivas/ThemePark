@@ -59,7 +59,7 @@
         <div th:each="FoodFound: ${restaurantFood}" class="col s12 l4">
             <div class="row">
                 <div class="flexbox-item">
-                    <div class="card border-dark border-2 text-dark bg-light mb-3" style="width: 25rem; max-height: 25rem;">
+                    <div class="card border-dark border-2 text-dark bg-light mb-3" style="width: 25rem;">
                         <img th:src="'/images/' + 'characterDining.webp'" class="card-img-top" alt="dining">
                         <div class="card-body">
                             <h4 th:href="'/Food/' + ${FoodFound.name}" th:text="${FoodFound.name}"></h4>

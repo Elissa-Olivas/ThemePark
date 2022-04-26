@@ -22,4 +22,9 @@ public class SiteController {
         modelMap.put("companyInfo", companyRepository.getCompanyInfo());
         return "contact";
     }
+
+//    @RequestMapping("/index") //org.thymeleaf.exceptions.TemplateInputException: Error resolving template [index.php], template might not exist or might not be accessible
+//    public String displayIndexPHP() {
+//        return "index.php";
+//    }
 }
