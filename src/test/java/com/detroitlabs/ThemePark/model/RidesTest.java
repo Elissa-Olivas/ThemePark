@@ -64,7 +64,7 @@ class RidesTest {
         assertEquals(result, 4);
     }
 
-//    @Test
+//    @Test (not sure how to test setters that are integers)
 //    void setWait_time() throws NoSuchFieldException, IllegalAccessException{
 //        testRide.setWait_time(10);
 //        final Field field = testRide.getClass().getDeclaredField("wait_time");
