@@ -4,11 +4,21 @@ public class Tickets {
     private String ticketType;      //infant, child, adult, senior
     private int numOfDays;
     private double price;
+    private int id;
 
-    public Tickets(String ticketType, int numOfDays, double price) {
+    public Tickets(String ticketType, int numOfDays, double price, int id) {
         this.ticketType = ticketType;
         this.numOfDays = numOfDays;
         this.price = price;
+        this.id = id;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
 
     public String getTicketType() {

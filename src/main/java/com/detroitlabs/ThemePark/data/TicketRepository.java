@@ -12,18 +12,18 @@ import java.util.List;
 public class TicketRepository {
 
     private static final List<Tickets> ALL_TICKETS = Arrays.asList(
-            new Tickets("Infant", 1, 0.00),     //    price for multi days is price/day.
-            new Tickets("Infant", 2, 0.00),
-            new Tickets("Infant", 3, 0.00),
-            new Tickets("Child", 1, 84.00),
-            new Tickets("Child", 2, 70.00),
-            new Tickets("Child", 3, 56.00),
-            new Tickets("Adult", 1, 104.00),
-            new Tickets("Adult", 2, 90.00),
-            new Tickets("Adult", 3, 76.00),
-            new Tickets("Senior", 1, 94.00),
-            new Tickets("Senior", 2, 80.00),
-            new Tickets("Senior", 3, 66.00));
+            new Tickets("Infant", 1, 0.00, 1),     //    price for multi days is price/day.
+            new Tickets("Infant", 2, 0.00, 2),
+            new Tickets("Infant", 3, 0.00, 3),
+            new Tickets("Child", 1, 84.00, 4),
+            new Tickets("Child", 2, 70.00, 5),
+            new Tickets("Child", 3, 56.00, 6),
+            new Tickets("Adult", 1, 104.00, 7),
+            new Tickets("Adult", 2, 90.00, 8),
+            new Tickets("Adult", 3, 76.00, 9),
+            new Tickets("Senior", 1, 94.00, 10),
+            new Tickets("Senior", 2, 80.00, 11),
+            new Tickets("Senior", 3, 66.00, 12));
 
 
 
