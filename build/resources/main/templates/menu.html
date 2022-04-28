@@ -52,12 +52,12 @@
     </div>
 </section>
 <br>
-<h1>Restaurants of Gisney</h1>
+<h1 th:href="'/restaurants/' + ${restaurantName}" th:text="${restaurantName}"></h1>
 <br>
 <a class="button card-link" th:href="@{/restaurants}">Go Back to All Restaurants</a>
 <br>
 <br>
-<div class="d-flex justify-content-around" style="justify-content: space-around; ">
+<div class="d-flex justify-content-around" style="justify-content: space-around; margin-left: 6%;  margin-right: auto;">
     <div class="row">
         <div th:each="FoodFound: ${restaurantFood}" class="col s12 l4">
             <div class="row">
