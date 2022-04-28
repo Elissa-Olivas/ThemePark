@@ -12,16 +12,12 @@ import java.io.IOException;
 @Controller
 public class AttractionController {
 
-
     @Autowired
     private AttractionRepository attractionRepository;
-
-
 
     @RequestMapping("/attractions")
     public String displayAttractions(ModelMap modelMap) throws IOException {
         modelMap.put("allLands", attractionRepository.landsList());
-//        modelMap.put("allRides", attractionRepository.ridesList());
         return "attractions";
     }
 
@@ -29,6 +25,7 @@ public class AttractionController {
     public String displayRestaurantMenu(@PathVariable String name, ModelMap modelMap) throws IOException {
         String lands = attractionRepository.findByName(name);
         modelMap.put("lands", lands);
+        modelMap.put("image", attractionRepository.returnImage(name));
         modelMap.put("allRides", attractionRepository.getRidesByLand(name));
         return "attraction-details";
     }
@@ -50,6 +47,5 @@ public class AttractionController {
         modelMap.put("allRides", attractionRepository.findByHeightOver32(32));
         return "ridesOver32";
     }
-
 
 }

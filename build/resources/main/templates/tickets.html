@@ -70,6 +70,9 @@
                 <li>
                     <a th:href="@{/contact}">Contact</a>
                 </li>
+                <li>
+                    <a th:href="@{/mygisney}">MyGisney</a>
+                </li>
             </ul>
         </nav>
     </div>
@@ -103,9 +106,9 @@
             </td>
             <td>
                 <select id="days">
-                    <option value="oneDay">1</option>
-                    <option value="twoDay">2</option>
-                    <option value="threeDay">3</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
                 </select>
             </td>
             <td>
@@ -133,23 +136,22 @@
         </tbody>
     </table>
     <input type="button" th:onClick="'multiplyBy()'" th:value="'Total Price of Tickets: '"/>
-    <!--    <input type="button" onClick="multiplyBy()" th:onclick="|multiplyBy()|" Value="Multiply" />-->
     <br>
 </form>
-<!--<h3>Total Price of Tickets:</h3>-->
 <span id="result"></span>
 <br>
 <div class="ticket-btn">
+    <p>Price (USD) per day, per ticket</p>
     <img th:src="'/images/' + 'tickets.jpg'" class="card-img-top" alt="ticket" style="width: 100px; height: auto;">
     <a class="button card-link" th:href="@{/tickets}">Add Ticket to Cart</a>
 </div>
 <script th:inline="javascript">
     function multiplyBy() {
-        var num1 = document.getElementById('quantity').value;
+        var num1 = document.getElementById('days').value;
         var num2 = document.getElementById('ticketPrice').value;
         document.getElementById('result').innerHTML = num1 * num2;
         console.log(num1, num2);
-        console.log(document.getElementById('quantity').value, document.getElementById('ticketPrice').value);
+        console.log(document.getElementById('days').value, document.getElementById('ticketPrice').value);
         console.log(document.getElementById('result').innerHTML = num1 * num2);
     }
 </script>

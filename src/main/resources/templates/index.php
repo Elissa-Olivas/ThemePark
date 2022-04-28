@@ -1,6 +1,6 @@
 <?php
     include_once 'header.php';
-//include '../includes/dbh.inc.php';
+include '../includes/dbh.inc.php';
 //$conn = OpenCon();
 //echo "Connected Successfully";
 //CloseCon($conn);

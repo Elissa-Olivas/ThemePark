@@ -34,6 +34,7 @@ public class AttractionRepository {
     }
 
 
+    //method to create all the lands from API
     public List<Lands> landsList() throws IOException {
         parkData = ParkService.fetchAttractionData();
         allLands = new ArrayList<>();
@@ -68,7 +69,7 @@ public class AttractionRepository {
         return listOfRides;
     }
 
-    //gets rides by land, make list with rides only within that land
+    //groups the rides by land, make list with rides only within that land
     public List<Rides> getRidesByLand(String name) {
         ridesPerLand = new ArrayList<>();
         for (Lands lands: allLands) {
@@ -88,6 +89,7 @@ public class AttractionRepository {
         return null;
     }
 
+    //sets min height for ride
     public int returnHeightOfRide(String name) {
         if (name.equals("Autopia")) {
             return 32;
@@ -112,6 +114,7 @@ public class AttractionRepository {
         }
     }
 
+    //sets image to Land
     public String returnImage(String name) {
         if (name.equals("Adventureland")) {
             return "adventureland";

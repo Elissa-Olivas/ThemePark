@@ -45,6 +45,9 @@
                 <li>
                     <a th:href="@{/contact}">Contact</a>
                 </li>
+                <li>
+                    <a th:href="@{/mygisney}">MyGisney</a>
+                </li>
             </ul>
         </nav>
     </div>
@@ -67,7 +70,7 @@
                             <h5 th:text="${hotelCard.name}" class="card-title">Card title</h5>  <!-- name of hotel -->
                             <p th:text="${hotelCard.getFullAddress()}" class="card-text"></p>   <!-- Address -->
                             <p class="card-text"><small class="text-muted" th:text="${hotelCard.current}"></small></p> <!-- price -->
-                            <a class="button card-link">Book Hotel</a>
+                            <a class="button card-link" th:href="'https://hotels.com'">Book Hotel</a>
                         </div>
                     </div>
                 </div>

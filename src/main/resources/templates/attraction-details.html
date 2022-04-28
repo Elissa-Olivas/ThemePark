@@ -48,6 +48,9 @@
                 <li>
                     <a th:href="@{/contact}">Contact</a>
                 </li>
+                <li>
+                    <a th:href="@{/mygisney}">MyGisney</a>
+                </li>
             </ul>
         </nav>
     </div>
@@ -55,6 +58,9 @@
 <br>
 <br>
 <h1 th:href="'/lands/' + ${lands}" th:text="${lands}"></h1>
+<img th:src="@{'/images/' + ${image} + '.jpeg'}" style="height: 266px; width: auto;"/>
+<br>
+<br>
 <a class="button card-link" th:href="@{/attractions}">Go Back to All Lands</a>
 <br>
 <br>

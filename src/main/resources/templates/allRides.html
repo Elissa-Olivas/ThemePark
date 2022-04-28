@@ -41,21 +41,24 @@
                 <li>
                     <a th:href="@{/contact}">Contact</a>
                 </li>
+                <li>
+                    <a th:href="@{/mygisney}">MyGisney</a>
+                </li>
             </ul>
         </nav>
     </div>
 </section>
-
-<!--//sort by height-->
 <br>
-<h3>Filter Rides by Height</h3>
+<br>
+<h1><a th:href="'/allRides'" style="color: #333;">All Rides</a></h1>
+<br>
+<br>
+<!--//sort by height-->
+<h6>Filter Rides by Height</h6>
 <a th:href="'/allRides/ridesUnder32'" style="color: #333;">Rides with no Height Requirement</a>
 <br>
 <a th:href="'/allRides/ridesOver32'" style="color: #333;">32 inches and Higher</a>
 <br>
-<br>
-<br>
-<h3>All Rides</h3>
 <br>
 <div class="d-flex justify-content-around" style="justify-content: space-around; margin-left: 7%;">
     <div class="row">

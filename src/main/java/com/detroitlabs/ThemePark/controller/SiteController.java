@@ -23,8 +23,9 @@ public class SiteController {
         return "contact";
     }
 
-//    @RequestMapping("/index") //org.thymeleaf.exceptions.TemplateInputException: Error resolving template [index.php], template might not exist or might not be accessible
-//    public String displayIndexPHP() {
-//        return "index.php";
-//    }
+    @RequestMapping("/mygisney")
+    public String displayMyGisneyland() {
+        return "mygisney";
+    }
+
 }

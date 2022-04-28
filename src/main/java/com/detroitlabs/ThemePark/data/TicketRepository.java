@@ -52,7 +52,7 @@ public class TicketRepository {
     }
 
 
-    //    need to make method to calc total price for multi days.
+    // method to calc total price for multi days.
     public double findTotalPrice(String ticketType, int numOfDays, double price) {
         double totalPrice = 0;
         for (Tickets tickets: ALL_TICKETS) {
@@ -62,6 +62,4 @@ public class TicketRepository {
         }
         return totalPrice;
     }
-
-
 }

@@ -17,14 +17,11 @@ public class HotelController {
     @Autowired
     UserSearch userSearch;
 
-    //need to add in the getmapping home page
     @GetMapping("/hotels")
     public String displayHotelMain() {
         return "hotels";
     }
 
-    //site works, button works, however - once button clicked goes back to hotels and not hotel-details
-//    hotel-results?location=Denver&checkin=2022-04-26&checkout=2022-04-27&adults=1
     @RequestMapping(value= "/hotel-results/**", method = RequestMethod.GET)
     public String routeToHotelDetailPage(@RequestParam Map<String, String> userInput) {
         System.out.println(userInput.get("location"));
@@ -33,12 +30,12 @@ public class HotelController {
         userSearch.setLocation(userInput.get("location"));
         userSearch.setCheckInDate(userInput.get("checkin"));
         userSearch.setCheckOutDate(userInput.get("checkout"));
-        return "redirect:hotel-details"; //"redirect:hotel-details" makes the button not work
+        return "redirect:hotel-details";
 
     }
 
     @RequestMapping("/hotel-details")
-    public String displayHotelDetails(ModelMap modelMap) throws IOException {  //image, name, price, address(streetAddress, locality, postalCode, region)
+    public String displayHotelDetails(ModelMap modelMap) throws IOException {
         hotelRepository.generateHotels(userSearch.getLocation(), userSearch.getCheckInDate(), userSearch.getCheckOutDate());
         modelMap.put("hotels", hotelRepository.getAllHotels());
         return "hotel-details";

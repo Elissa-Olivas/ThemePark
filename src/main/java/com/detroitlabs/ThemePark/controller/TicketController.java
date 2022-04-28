@@ -33,10 +33,4 @@ public class TicketController {
         return "tickets";
     }
 
-//    @RequestMapping("/tickets/**")
-//    public String displayTicketsTotalPrice(@PathVariable String ticketType, int numOfDays, double price, ModelMap modelMap) {
-//        modelMap.put("tickets", ticketRepository.getAllTickets());
-//        modelMap.put("totalPrice", ticketRepository.findTotalPrice(ticketType, numOfDays, price));
-//        return "tickets";
-//    }
 }
