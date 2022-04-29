@@ -2,8 +2,10 @@
 include_once 'header.php';
 
 ?>
+
+
     <section class="signup-form">
-        <h2>Sign Up</h2>
+        <h2>Register</h2>
         <div class="signup-form-form"></div>
         <form action="../includes/signup.inc.php" method="post">
             <input type="text" name="name" placeholder="Full name...">
@@ -34,6 +36,7 @@ include_once 'header.php';
         }
 
         ?>
+
     </section>
 
 
